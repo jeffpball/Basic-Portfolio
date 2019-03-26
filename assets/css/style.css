@@ -162,6 +162,7 @@ input[type=submit]:hover {
 
 .container {
     margin-top: 60px;
+    margin-bottom: -180px;
     width: 960px;
     border-radius: 2px;
     background-color: #ffffff;
@@ -189,6 +190,26 @@ input[type=submit]:hover {
 
 /* portfolio.html styles */
 
+#section3 {
+    background: #ffffff;
+    box-shadow: 0 .5px 1px 0 rgba(0, 0, 0, 0.2), 0 .75px 2.5px 0 rgba(0, 0, 0, 0.19);
+    height: 560px;
+    margin-top: 60px;
+}
+
+#section3 h1 {
+    color: #4aaaa5;
+    padding: 20px 0 0 35px;
+}
+
+#section3 p {
+    color: #777777;
+    line-height: 30px;
+    padding-top: 10px;
+    padding-left: 50px;
+    padding-right: 50px;
+    text-indent: 50px;
+}
 
 figure {
     display: flex;
@@ -206,6 +227,10 @@ figure img {
     box-shadow: 0 .5px 1px 0 rgba(0, 0, 0, 0.2), 0 .75px 2.5px 0 rgba(0, 0, 0, 0.19);
 }
 
+figure img:hover {
+    box-shadow: 0 3px 4px 0 rgba(0, 0, 0, 0.2), 0 3px 5px 0 rgba(0, 0, 0, 0.19);
+}
+
 figcaption {
     background-color: #4aaaa5;
     color: #fff;
@@ -219,17 +244,35 @@ figcaption {
 #project1 {
     position: relative;
     top: 25px;
-    left: 25px;
+    left: 42px;
 }
 
 #project2 {
     position: relative;
-    top: -173px;
-    left: 350px;
+    top: -138px;
+    left: 357.5px;
 }
 
 #project3 {
     position: relative;
-    top: 0px;
-    left: 550px;
+    top: -300px;
+    left: 670px;
 }
+
+#project4 {
+    position: relative;
+    top: -250px;
+    left: 42px;
+}   
+
+#project5 {
+    position: relative;
+    top: -412px;
+    left: 357.5px;
+}   
+
+#project6 {
+    position: relative;
+    top: -575px;
+    left: 670px;
+}   
