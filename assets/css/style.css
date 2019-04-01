@@ -109,84 +109,7 @@ footer {
     margin-top: 60px;
 }
 
-/* contact.html styles */
 
-/* Style inputs with type="text", select elements and textareas */
-
-form {
-    width: 850px;
-    margin-left: auto;
-    margin-right: auto;
-    padding: 30px 0 30px 0;
-}
-
-label {
-    color: #777777;
-}
-
-input {
-    font-size: 100%;
-}
-
-input[type=text], select, textarea {
-    width: 100%; /* Full width */
-    padding: 12px; /* Some padding */  
-    border: 1px solid #ccc; /* Gray border */
-    border-radius: 4px; /* Rounded borders */
-    box-sizing: border-box; /* Make sure that padding and width stays in place */
-    margin-top: 6px; /* Add a top margin */
-    margin-bottom: 16px; /* Bottom margin */
-    resize: vertical /* Allow the user to vertically resize the textarea (not horizontally) */
-}
-
-/* Style the submit button with a specific background color etc */
-
-input[type=submit] {
-    background-color: #4aaaa5;
-    color: white;
-    padding: 10px 18px;
-    border: none;
-    border-radius: 1px;
-    font-size: 105%;
-    cursor: pointer;
-    margin: 0 15px 0 5px;
-}
-  
-/* When moving the mouse over the submit button, add a darker green color */
-
-input[type=submit]:hover {
-    background-color: #7acac6;
-}
-  
-/* Add a background color and some padding around the form */
-
-.container {
-    margin-top: 60px;
-    margin-bottom: 400px;
-    width: 960px;
-    border-radius: 2px;
-    background-color: #ffffff;
-    margin-left: auto;
-    margin-right: auto;
-    box-shadow: 0 .5px 1px 0 rgba(0, 0, 0, 0.2), 0 .75px 2.5px 0 rgba(0, 0, 0, 0.19);
-}
-
-.container h1 {
-    color: #4aaaa5;
-    padding: 20px 0 0 35px;
-    font-size: 162%;
-}
-
-#footer-contact {
-    border: solid #4aaaa5;
-    border-width: 10px 0 0 0;
-    text-align: center;
-    font-size: 75%;
-    color: #ffffff;
-    background: #666666;
-    padding: 70px 0 10px 0;
-    margin-top: 240px;
-}
 
 /* portfolio.html styles */
 
@@ -277,3 +200,346 @@ figcaption {
     top: -575px;
     left: 670px;
 }   
+
+/* contact.html styles */
+
+/* Style inputs with type="text", select elements and textareas */
+
+form {
+    width: 850px;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 30px 0 30px 0;
+}
+
+label {
+    color: #777777;
+}
+
+input {
+    font-size: 100%;
+}
+
+input[type=text], select, textarea {
+    width: 100%; /* Full width */
+    padding: 12px; /* Some padding */  
+    border: 1px solid #ccc; /* Gray border */
+    border-radius: 4px; /* Rounded borders */
+    box-sizing: border-box; /* Make sure that padding and width stays in place */
+    margin-top: 6px; /* Add a top margin */
+    margin-bottom: 16px; /* Bottom margin */
+    resize: vertical /* Allow the user to vertically resize the textarea (not horizontally) */
+}
+
+/* Style the submit button with a specific background color etc */
+
+input[type=submit] {
+    background-color: #4aaaa5;
+    color: white;
+    padding: 10px 18px;
+    border: none;
+    border-radius: 1px;
+    font-size: 105%;
+    cursor: pointer;
+    margin: 0 15px 0 5px;
+}
+  
+/* When moving the mouse over the submit button, add a darker green color */
+
+input[type=submit]:hover {
+    background-color: #7acac6;
+}
+  
+/* Add a background color and some padding around the form */
+
+.container {
+    margin-top: 60px;
+    margin-bottom: 400px;
+    width: 960px;
+    border-radius: 2px;
+    background-color: #ffffff;
+    margin-left: auto;
+    margin-right: auto;
+    box-shadow: 0 .5px 1px 0 rgba(0, 0, 0, 0.2), 0 .75px 2.5px 0 rgba(0, 0, 0, 0.19);
+}
+
+.container h1 {
+    color: #4aaaa5;
+    padding: 20px 0 0 35px;
+    font-size: 162%;
+}
+
+#footer-contact {
+    border: solid #4aaaa5;
+    border-width: 10px 0 0 0;
+    text-align: center;
+    font-size: 75%;
+    color: #ffffff;
+    background: #666666;
+    padding: 70px 0 10px 0;
+    margin-top: 240px;
+}
+
+/* index.html responsive styles */
+
+@media only screen and (max-width: 980px) {
+    section {
+        width: 660px;
+        padding-bottom: 150px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+}
+
+@media only screen and (max-width: 640px) {
+    header {
+        width: 100%;
+        margin: 0px;
+        height: 90px;
+        box-shadow: 0 .5px 1px 0 rgba(0, 0, 0, 0.2), 0 .75px 2.5px 0 rgba(0, 0, 0, 0.19);
+        background: #ffffff;
+    }
+    
+    header h1 {
+        float: left;
+        height: 60px;
+        background: #4aaaa5;
+        margin: 0px;
+        width: 100%;
+        box-shadow: none;
+        text-align: center;
+        padding-top: 30px;
+        color: white;
+    }
+    
+    header nav {
+        float: right;
+        padding: 25px 0px 25px 0px;
+        background: rgb(255, 255, 255);
+        width: 100%;
+        text-align: center;
+        box-shadow: 0 .5px 1px 0 rgba(0, 0, 0, 0.2), 0 .75px 2.5px 0 rgba(0, 0, 0, 0.19);
+    }
+    
+    header nav a {
+        padding: 0 15px 0 0;
+        color: #777777;
+        text-decoration: none;
+    }
+    
+    header nav a:hover {
+        color: #161616;
+        transition: 0.1s;
+    }
+
+    #section1 {
+        width: 100%;
+    }
+
+    section {
+        width: 400px;
+        padding-bottom: 550px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    section img {
+        height: 200px;
+        padding: 20px 0 0 115px;
+        float: none;
+        margin-right: auto;
+        margin-left: auto;
+    }
+
+    #section2 {
+        background: #ffffff;
+        box-shadow: 0 .5px 1px 0 rgba(0, 0, 0, 0.2), 0 .75px 2.5px 0 rgba(0, 0, 0, 0.19);
+        height: 960px;
+        margin-top: 100px;
+    }
+    
+    #section2 h1 {
+        color: #4aaaa5;
+        padding: 20px 0 0 35px;
+    }
+    
+    #section2 p {
+        color: #777777;
+        line-height: 30px;
+        padding-top: 10px;
+        padding-left: 25px;
+        padding-right: 25px;
+        text-indent: 0px;
+    }
+
+    #p1 {
+        color: #777777;
+        line-height: 30px;
+        padding-left: 25px;
+        padding-right: 25px;
+        text-indent: 0px;
+        margin-top: 0px;
+    }
+
+    ul {
+        color: #777777;
+        padding-left: 50px;
+        line-height: 30px;
+        width: 325px;
+    }
+
+}
+
+/* portfolio.html responsive styles */
+
+@media only screen and (max-width: 980px) {
+    #section3 {
+        width: 660px;
+        padding-bottom: 190px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    #project1 {
+        position: relative;
+        top: 25px;
+        left: 42px;
+    }
+    
+    #project2 {
+        position: relative;
+        top: -138px;
+        left: 357.5px;
+    }
+    
+    #project3 {
+        position: relative;
+        top: -83px;
+        left: 42px;
+    }
+    
+    #project4 {
+        position: relative;
+        top: -246px;
+        left: 358px;
+    }   
+    
+    #project5 {
+        position: relative;
+        top: -190px;
+        left: 42px;
+    }   
+    
+    #project6 {
+        position: relative;
+        top: -353px;
+        left: 358px;
+    }  
+}
+
+@media only screen and (max-width: 640px) {
+    #section3 {
+        width: 400px;
+        padding-bottom: 850px;
+        margin-left: auto;
+        margin-right: auto;
+        margin-top: 100px;
+        margin-bottom: -0px;
+    }
+
+    figure {
+        max-width: 250px;
+        margin: 0;
+        padding: 0;
+    }
+    
+    figure img {
+        width: 250px;
+        height: 175px;
+        padding: 0;
+        margin: 0;
+        box-shadow: 0 .5px 1px 0 rgba(0, 0, 0, 0.2), 0 .75px 2.5px 0 rgba(0, 0, 0, 0.19);
+    }
+    
+    figure img:hover {
+        box-shadow: 0 3px 4px 0 rgba(0, 0, 0, 0.2), 0 3px 5px 0 rgba(0, 0, 0, 0.19);
+    }
+
+    #project1 {
+        position: relative;
+        top: 25px;
+        left: 75px;
+    }
+    
+    #project2 {
+        position: relative;
+        top: 75px;
+        left: 75px;
+    }
+    
+    #project3 {
+        position: relative;
+        top: 125px;
+        left: 75px;
+    }
+    
+    #project4 {
+        position: relative;
+        top: 175px;
+        left: 75px;
+    }   
+    
+    #project5 {
+        position: relative;
+        top: 227px;
+        left: 75px;
+    }   
+    
+    #project6 {
+        position: relative;
+        top: 280px;
+        left: 75px;
+    }  
+}
+
+/* contact.html responsive styles */
+
+@media only screen and (max-width: 980px) {
+    .container {
+        margin-top: 60px;
+        margin-bottom: 400px;
+        width: 660px;
+        border-radius: 2px;
+        background-color: #ffffff;
+        margin-left: auto;
+        margin-right: auto;
+        box-shadow: 0 .5px 1px 0 rgba(0, 0, 0, 0.2), 0 .75px 2.5px 0 rgba(0, 0, 0, 0.19);
+    }
+
+    form {
+        width: 620px;
+        margin-left: auto;
+        margin-right: auto;
+        padding: 30px 0 30px 0;
+    }
+}
+
+@media only screen and (max-width: 640px) {
+    .container {
+        margin-top: 100px;
+        margin-bottom: 0px;
+        width: 400px;
+        border-radius: 2px;
+        background-color: #ffffff;
+        margin-left: auto;
+        margin-right: auto;
+        box-shadow: 0 .5px 1px 0 rgba(0, 0, 0, 0.2), 0 .75px 2.5px 0 rgba(0, 0, 0, 0.19);
+    }
+
+    form {
+        width: 370px;
+        margin-left: auto;
+        margin-right: auto;
+        padding: 30px 0 30px 0;
+    }
+}
