@@ -283,15 +283,58 @@ input[type=submit]:hover {
 /* index.html responsive styles */
 
 @media only screen and (max-width: 980px) {
+    
     section {
         width: 660px;
         padding-bottom: 150px;
         margin-left: auto;
         margin-right: auto;
     }
+
+    #section2 {
+        background: #ffffff;
+        box-shadow: 0 .5px 1px 0 rgba(0, 0, 0, 0.2), 0 .75px 2.5px 0 rgba(0, 0, 0, 0.19);
+        height: 960px;
+        margin-top: 100px;
+    }
+    
+    #section2 h1 {
+        color: #4aaaa5;
+        padding: 20px 0 0 35px;
+    }
+    
+    #section2 p {
+        color: #777777;
+        line-height: 30px;
+        padding-top: 10px;
+        padding-left: 25px;
+        padding-right: 25px;
+        text-indent: 0px;
+    }
+
+    #p1 {
+        color: #777777;
+        line-height: 30px;
+        padding-left: 25px;
+        padding-right: 25px;
+        text-indent: 0px;
+        margin-top: 0px;
+    }
+
+    ul {
+        color: #777777;
+        padding-left: 75px;
+        line-height: 30px;
+    }
+
 }
 
 @media only screen and (max-width: 640px) {
+
+    #section1 {
+        width: 100%;
+    }
+
     header {
         width: 100%;
         margin: 0px;
@@ -332,62 +375,42 @@ input[type=submit]:hover {
         transition: 0.1s;
     }
 
-    #section1 {
-        width: 100%;
+    #section2 h1 {
+        color: #4aaaa5;
+        padding: 20px 0px 0px 0px;
+        text-align: center;
     }
-
-    section {
-        width: 400px;
-        padding-bottom: 550px;
-        margin-left: auto;
-        margin-right: auto;
-    }
-
+    
     section img {
         height: 200px;
-        padding: 20px 0 0 115px;
+        padding: 20px 0px 0px 0px;
         float: none;
-        margin-right: auto;
         margin-left: auto;
+        margin-right: auto;
+        display:block;
     }
 
     #section2 {
-        background: #ffffff;
-        box-shadow: 0 .5px 1px 0 rgba(0, 0, 0, 0.2), 0 .75px 2.5px 0 rgba(0, 0, 0, 0.19);
-        height: 960px;
-        margin-top: 100px;
+        height: 1550px;
+        width: 300px;
     }
-    
-    #section2 h1 {
-        color: #4aaaa5;
-        padding: 20px 0 0 35px;
-    }
-    
+
     #section2 p {
         color: #777777;
         line-height: 30px;
         padding-top: 10px;
-        padding-left: 25px;
-        padding-right: 25px;
+        padding-left: 20px;
+        padding-right: 20px;
         text-indent: 0px;
     }
 
-    #p1 {
+     ul {
         color: #777777;
         line-height: 30px;
-        padding-left: 25px;
-        padding-right: 25px;
-        text-indent: 0px;
-        margin-top: 0px;
+        width: 250px;
+        padding-left: 40px;
+        padding-right: 50px;
     }
-
-    ul {
-        color: #777777;
-        padding-left: 50px;
-        line-height: 30px;
-        width: 325px;
-    }
-
 }
 
 /* portfolio.html responsive styles */
@@ -396,6 +419,7 @@ input[type=submit]:hover {
     #section3 {
         width: 660px;
         padding-bottom: 190px;
+        margin-top: 100px;
         margin-left: auto;
         margin-right: auto;
     }
@@ -439,7 +463,7 @@ input[type=submit]:hover {
 
 @media only screen and (max-width: 640px) {
     #section3 {
-        width: 400px;
+        width: 300px;
         padding-bottom: 850px;
         margin-left: auto;
         margin-right: auto;
@@ -468,37 +492,37 @@ input[type=submit]:hover {
     #project1 {
         position: relative;
         top: 25px;
-        left: 75px;
+        left: 25px;
     }
     
     #project2 {
         position: relative;
         top: 75px;
-        left: 75px;
+        left: 25px;
     }
     
     #project3 {
         position: relative;
         top: 125px;
-        left: 75px;
+        left: 25px;
     }
     
     #project4 {
         position: relative;
         top: 175px;
-        left: 75px;
+        left: 25px;
     }   
     
     #project5 {
         position: relative;
         top: 227px;
-        left: 75px;
+        left: 25px;
     }   
     
     #project6 {
         position: relative;
         top: 280px;
-        left: 75px;
+        left: 25px;
     }  
 }
 
@@ -508,6 +532,7 @@ input[type=submit]:hover {
     .container {
         margin-top: 60px;
         margin-bottom: 400px;
+        margin-top: 100px;
         width: 660px;
         border-radius: 2px;
         background-color: #ffffff;
@@ -528,7 +553,7 @@ input[type=submit]:hover {
     .container {
         margin-top: 100px;
         margin-bottom: 0px;
-        width: 400px;
+        width: 300px;
         border-radius: 2px;
         background-color: #ffffff;
         margin-left: auto;
@@ -537,7 +562,7 @@ input[type=submit]:hover {
     }
 
     form {
-        width: 370px;
+        width: 270px;
         margin-left: auto;
         margin-right: auto;
         padding: 30px 0 30px 0;
