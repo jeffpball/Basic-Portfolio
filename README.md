@@ -1,4 +1,4 @@
-# <a href="https://jeffpball.github.io/index.html" target="_blank">Web Developer Portfolio</a>
+# <a href="https://jeffpball.github.io/index.html" target="none">Web Developer Portfolio</a>
 
 
 ## Projects
