@@ -1,7 +1,47 @@
 html { 
-    background: url(../images/jungle.jpg) no-repeat center center fixed; 
+    background: url(../images/storm-trooper-background.jpg) no-repeat center center fixed; 
     -webkit-background-size: cover;
     -moz-background-size: cover;
     -o-background-size: cover;
     background-size: cover;
 }
+
+#container {
+    display: flex;
+    flex-direction: row;
+    min-height: 100vh;
+    overflow: hidden;
+}
+
+.column {
+    display: flex;
+    flex-direction: column;
+    max-height: 30vh;
+    width: 8.33vw;
+    align-items: baseline;
+}
+
+.row {
+    display: flex;
+    flex-direction: column;
+    border: solid yellow;
+}
+
+.pulsate {
+    -webkit-animation: pulsate .5s ease-out;
+    -webkit-animation-iteration-count: infinite; 
+    opacity: 0.5;
+}
+
+@-webkit-keyframes pulsate {
+    0% { 
+        opacity: 0.5;
+    }
+    50% { 
+        opacity: 1.0;
+    }
+    100% { 
+        opacity: 0.5;
+    }
+}
+

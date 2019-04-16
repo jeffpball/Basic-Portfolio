@@ -8,44 +8,130 @@
     <link rel="stylesheet" type="text/css" href="assets/css/reset.css">
     <link rel="stylesheet" type="text/css" href="assets/css/styles.css">
     <link href="https://fonts.googleapis.com/css?family=Gloria+Hallelujah" rel="stylesheet">
-    <title>What's in that there Jungle?!</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <title>Star Wars Gauntlet</title>
 </head>
 
 <body>
 
   <container id="container">
-    <div id="column1">
-        <img id="hangman" src="assets/images/hangman1.png" alt="" style="width: 115px; padding: 10px 0px 15px 10px;">
-        <h2>Look! It's a(n):</h2>
-        <h2 id="underscoresHere"></h2>
-        <h2 id="alreadyGuessed">Letters Already Guessed:</h2>
-        <h2 id="wins">Wins:</h2>
-        <h2 id="losses">Losses:</h2>
+    
+    
+
+    <div id="col-1" class="column">
+        <div id="C3P0" style="padding: 0 0 0 30px;">
+            <img src="assets/images/c3po.png" alt="" style="padding: 155px 0 0 10px; width: 50px">
+            <p style="padding: 0 0 0 15px; text-align: center; color:white;">C3P0 <br>  20HP</p>
+        </div>
         
     </div>
-    <div id="column2">
-        <img id="begin-frog" src="assets/images/begin-frog.png" alt="begin-frog" style="width: 400px; display: none;">
-        <div id="column2-block"></div>
+
+    <div id="col-2" class="column">
+        <div>
+            <img src="assets/images/doikkna'ts.png" alt="" style="padding: 155px 0 0 10px; width: 40px">
+            <p style="padding: 0 0 0 0; text-align: center; color:white;">Doikk <br> Na'ts <br> 25HP</p>
+        </div>
+        
     </div>
-    <div id="column3">
-        <p id="p3"></p>
+
+    <div id="col-3" class="column">
+        <div>
+            <img id="greedo" src="assets/images/greedo.png" alt="" style="padding: 155px 0 0 30px; width: 80px">
+            <p style="padding: 0 0 0 0; text-align: center; color:white;">Greedo <br>  60HP</p>
+        </div>
+        
     </div>
-    <div id="column4">
-        <img id="jaguar-image" src="assets/images/jaguar.png" alt="" style="display: none; margin-left: 200px; margin-top: 400px; width: 350px;">
-        <img id="sloth-image" src="assets/images/sloth.png" alt="" style="display: none; margin-right: 200px;">
-        <img id="frog-image" src="assets/images/frog.png" alt="" style="display: none; margin-top: 100px; width: 250px;">
-        <img id="toucan-image" src="assets/images/toucan.png" alt="" style="display: none; margin-left: 200px;">
-        <img id="monkey-image" src="assets/images/monkey.png" alt="" style="display: none; margin-left: 50px;">
-        <img id="anaconda-image" src="assets/images/anaconda.png" alt="" style="display: none; margin-right: 300px; width: 450px;">
-        <img id="parrot-image" src="assets/images/parrot.png" alt="" style="display: none;">
-        <img id="butterfly-image" src="assets/images/butterfly.png" alt="" style="display: none; margin-top: 200px;">
-        <img id="tapir-image" src="assets/images/tapir.png" alt="" style="display: none; width: 350px;">
-        <img id="spider-image" src="assets/images/spider.png" alt="" style="display: none;">
-        <h1 id="reminder-text">Press any letter!</h1>
-        <h1 class="pulsate" id="intro-text">Press any key to begin your adventure!</h1>
-        <div id="column4-block"></div>
+
+    <div id="col-4" class="column">
+        <div>
+            <img id="jawa" src="assets/images/jawa.png" alt="" style="padding: 175px 0 0 30px; width: 50px">
+            <p style="padding: 0 0 0 30px; text-align: center; color:white;">Jawa <br>  20HP</p>
+        </div>
+        
+<div>
+                <img id="pad1" src="assets/images/pad1.png" alt="" style="display: none; padding: 56vh 0 0 5vw; width: 200px">
+            </div>
+        
+        
     </div>
-    
+
+    <div id="col-5" class="column">
+        <div>
+            <img src="assets/images/luke.png" alt="" style="padding: 150px 0 0 30px; width: 45px">
+            <p style="padding: 0 0 0 30px; text-align: center; color:white;">Luke <br>  20HP</p>
+        </div>
+        
+        
+    </div>
+
+    <div id="col-6" class="column">
+        <div>
+            <img src="assets/images/obiwan.png" alt="" style="padding: 150px 0 0 30px; width: 55px">
+            <p style="padding: 0 0 0 20px; text-align: center; color:white;">Obiwan <br>  20HP</p>
+        </div>
+        <div>
+             <h1 id="intro-text" class="pulsate" style="color:white; font-size: 3vw;  padding: 10vh 0 0 0; overflow: visible; display: flex; width: 800%; margin-left: -50%;">Type or Click to Begin!</h1>   
+        </div>
+        <div>
+            <h1 id="instructions-text" class="pulsate" style="display: none; color:white; font-size: 3vw; padding: 10vh 0 0 0; overflow: visible; width: 600%; margin-left: -40%;">Click to select your character.</h1>   
+        </div>
+        
+    </div>
+
+    <div id="col-7" class="column">
+            <div>
+                    <img src="assets/images/chewbacca.png" alt="" style=" padding: 145px 0 0 10px; width: 80px">
+                    <p style="padding: 0 0 0 0; text-align: center; color:white;">Chewbacca<br>  80HP</p>
+                </div>
+    </div>
+
+    <div id="col-8" class="column">
+            <div>
+                    <img src="assets/images/eg6.png" alt="" style="padding: 195px 0 0 30px; width: 50px">
+                    <p style="padding: 0 0 0 35px; text-align: center; color:white;">EG6 <br>  15HP</p>
+                </div>
+                <div>
+                        <img id="pad2" src="assets/images/pad2.png" alt="" style="display: none; padding: 56vh 0 0 10px; width: 200px">
+                    </div>
+    </div>
+
+    <div id="col-9" class="column">
+        
+            <div>
+                    <img src="assets/images/han.png" alt="" style="padding: 153px 0 0 30px; width: 85px">
+                    <p style="padding: 0 0 0 0; text-align: center; color:white;">Han <br> Solo <br>  65HP</p>
+                </div>
+
+                
+    </div>
+
+    <div id="col-10" class="column">
+            
+            <div>
+                    <img src="assets/images/leia.png" alt="" style="padding: 155px 0 0 30px; width: 80px">
+                    <p style="padding: 0 0 0 0; text-align: center; color:white;">Leia<br>  20HP</p>
+                </div>
+    </div>
+
+    <div id="col-11" class="column">
+            <div style="overflow: visible; display: flex; width: 1000%; margin-left: -950%;" >
+                    <h1 style="font-size: 600%; color: white; padding: 30px 0 0 0;">Star Wars Gauntlet!</h1>
+                </div>
+            <div style="position: absolute; padding: 0 70px 0 0;">
+                    <img src="assets/images/momawnadon.png" alt="" style="padding: 145px 0 0 30px; width: 70px">
+                    <p style="padding: 0 0 0 0; text-align: center; color:white;">Momaw <br> Nadon <br>  20HP</p>
+                </div>
+    </div>
+
+    <div id="col-12" class="column">
+        
+        <div>
+                <img src="assets/images/pondababa.png" alt="" style="padding: 148px 0 0 30px; width: 50px">
+                <p style="padding: 0 0 0 35px; text-align: center; color:white;">Ponda <br> Baba <br>  20HP</p>
+            </div>
+    </div>
+
+
   </container>
   
 </body>
