@@ -16,79 +16,116 @@
 
   <container id="container">
     
-    
-
     <div id="col-1" class="column">
-        <div id="C3P0" style="padding: 0 0 0 30px;">
-            <img src="assets/images/c3po.png" alt="" style="padding: 155px 0 0 10px; width: 50px">
-            <p style="padding: 0 0 0 15px; text-align: center; color:white;">C3P0 <br>  20HP</p>
+        <div id="c3po" style="padding: 0 0 0 30px;">
+            <img src="assets/images/c3po.png" alt="" style="padding: 160px 0 0 10px; width: 50px">
+            <p id="c3po-text" style="padding: 0 0 0 15px; text-align: center; color:white;">C3P0 <br>  20HP</p>
         </div>
-        
+        <div>
+            <h1 id="attacker-info" style="display: none; color:white; font-size: 2vw;  position: absolute; top: 350px; overflow: visible; width: 600%; margin-left: 50px;"></h1>   
+            <h1 id="attacker-health" style="display: none; color:white; font-size: 2vw;  position: absolute; top: 390px; overflow: visible; width: 600%; margin-left: 50px;"></h1>   
+        </div>
     </div>
 
     <div id="col-2" class="column">
-        <div>
-            <img src="assets/images/doikkna'ts.png" alt="" style="padding: 155px 0 0 10px; width: 40px">
-            <p style="padding: 0 0 0 0; text-align: center; color:white;">Doikk <br> Na'ts <br> 25HP</p>
+        <div id="doikknats">
+            <img src="assets/images/doikknats.png" alt="" style="padding: 155px 0 0 10px; width: 40px">
+            <p id="doikknats-text" style="padding: 0 0 0 0; text-align: center; color:white;">Doikk <br> Na'ts <br> 25HP</p>
         </div>
+        
         
     </div>
 
     <div id="col-3" class="column">
-        <div>
-            <img id="greedo" src="assets/images/greedo.png" alt="" style="padding: 155px 0 0 30px; width: 80px">
-            <p style="padding: 0 0 0 0; text-align: center; color:white;">Greedo <br>  60HP</p>
+        <div id="greedo">
+            <img src="assets/images/greedo.png" alt="" style="padding: 155px 0 0 30px; width: 80px">
+            <p id="greedo-text" style="padding: 0 0 0 0; text-align: center; color:white;">Greedo <br>  60HP</p>
         </div>
         
     </div>
 
     <div id="col-4" class="column">
-        <div>
-            <img id="jawa" src="assets/images/jawa.png" alt="" style="padding: 175px 0 0 30px; width: 50px">
-            <p style="padding: 0 0 0 30px; text-align: center; color:white;">Jawa <br>  20HP</p>
+        <div id="jawa">
+            <img src="assets/images/jawa.png" alt="" style="padding: 175px 0 0 30px; width: 50px">
+            <p id="jawa-text" style="padding: 0 0 0 30px; text-align: center; color:white;">Jawa <br>  20HP</p>
         </div>
-        
-<div>
-                <img id="pad1" src="assets/images/pad1.png" alt="" style="display: none; padding: 56vh 0 0 5vw; width: 200px">
+        <div id="filler2" style="display:none; padding: 283px 0 0 10px; width: 80px"></div>
+        <div>
+                <img id="c3po-pad-attack" src="assets/images/c3po-pad-attack.png" alt="" style="display: none; padding: 225px 0 0 5vw; width: 200px">
+                <img id="doikknats-pad-attack" src="assets/images/doikknats-pad-attack.png" alt="" style="display: none; padding: 225px 0 0 5vw; width: 200px">
+                <img id="greedo-pad-attack" src="assets/images/greedo-pad-attack.png" alt="" style="display: none; padding: 225px 0 0 5vw; width: 265px">
+                <img id="jawa-pad-attack" src="assets/images/jawa-pad-attack.png" alt="" style="display: none; padding: 500px 0 0 5vw; width: 200px">
+                <img id="luke-pad-attack" src="assets/images/luke-pad-attack.png" alt="" style="display: none; padding: 225px 0 0 5vw; width: 200px">
+                <img id="obiwan-pad-attack" src="assets/images/obiwan-pad-attack.png" alt="" style="display: none; padding: 225px 0 0 5vw; width: 200px">
+                <img id="chewbacca-pad-attack" src="assets/images/chewbacca-pad-attack.png" alt="" style="display: none; padding: 225px 0 0 5vw; width: 210px">
+                <img id="eg6-pad-attack" src="assets/images/eg6-pad-attack.png" alt="" style="display: none; padding: 225px 0 0 5vw; width: 200px">
+                <img id="han-pad-attack" src="assets/images/han-pad-attack.png" alt="" style="display: none; padding: 225px 0 0 5vw; width: 260px">
+                <img id="leia-pad-attack" src="assets/images/leia-pad-attack.png" alt="" style="display: none; padding: 225px 0 0 5vw; width: 240px">
+                <img id="momawnadon-pad-attack" src="assets/images/momawnadon-pad-attack.png" alt="" style="display: none; padding: 225px 0 0 5vw; width: 225px">
+                <img id="pondababa-pad-attack" src="assets/images/pondababa-pad-attack.png" alt="" style="display: none; padding: 225px 0 0 5vw; width: 200px">
+                
             </div>
-        
+            <button id="attack-button" class="button button1" style="display: none;">Attack</button>
         
     </div>
 
     <div id="col-5" class="column">
-        <div>
+        <div id="luke">
             <img src="assets/images/luke.png" alt="" style="padding: 150px 0 0 30px; width: 45px">
-            <p style="padding: 0 0 0 30px; text-align: center; color:white;">Luke <br>  20HP</p>
+            <p id="luke-text" style="padding: 0 0 0 30px; text-align: center; color:white;">Luke <br>  75HP</p>
         </div>
         
         
     </div>
 
     <div id="col-6" class="column">
-        <div>
+        <div id="obiwan">
             <img src="assets/images/obiwan.png" alt="" style="padding: 150px 0 0 30px; width: 55px">
-            <p style="padding: 0 0 0 20px; text-align: center; color:white;">Obiwan <br>  20HP</p>
+            <p id="obiwan-text" style="padding: 0 0 0 20px; text-align: center; color:white;">Obiwan <br>  175HP</p>
+        </div>
+        <div id="filler3" style=" display:none; margin: 0 0 275px 10px; width: 80px"></div>
+        <div>
+             <h1 id="intro-text" class="pulsate" style="color:white; font-size: 3vw;  padding: 10vh 0 0 0; overflow: visible; display: flex; width: 800%; margin-left: -65%;">Press SPACEBAR to begin!</h1>   
         </div>
         <div>
-             <h1 id="intro-text" class="pulsate" style="color:white; font-size: 3vw;  padding: 10vh 0 0 0; overflow: visible; display: flex; width: 800%; margin-left: -50%;">Type or Click to Begin!</h1>   
+            <h1 id="instructions-text" class="pulsate" style="display: none; color:white; font-size: 3vw; padding: 10vh 0 0 0; overflow: visible; width: 600%; margin-left: -80%;">Click to select your character.</h1>   
         </div>
         <div>
-            <h1 id="instructions-text" class="pulsate" style="display: none; color:white; font-size: 3vw; padding: 10vh 0 0 0; overflow: visible; width: 600%; margin-left: -40%;">Click to select your character.</h1>   
+            <h1 id="choose-defender-text" class="pulsate" style=" display: none; color:white; font-size: 3vw; padding: 10vh 0 0 0; overflow: visible; width: 600%; margin-left: -45%;">Choose your enemy.</h1>   
+        </div>
+        <div>
+            <h1 id="choose-defender-text" class="pulsate" style=" display: none; color:white; font-size: 3vw; padding: 10vh 0 0 0; overflow: visible; width: 600%; margin-left: -45%;">Choose your enemy.</h1>   
         </div>
         
     </div>
 
     <div id="col-7" class="column">
-            <div>
+            <div id="chewbacca">
                     <img src="assets/images/chewbacca.png" alt="" style=" padding: 145px 0 0 10px; width: 80px">
-                    <p style="padding: 0 0 0 0; text-align: center; color:white;">Chewbacca<br>  80HP</p>
-                </div>
+                    <p id="chewbacca-text" style="padding: 0 0 0 0; text-align: center; color:white;">Chewbacca<br>  80HP</p>
+            </div>
+            <div id="filler1" style="display:none; padding: 280px 0 0 10px; width: 80px"></div>
+                <div>
+                        <img id="c3po-pad-defend" src="assets/images/c3po-pad-defend.png" alt="" style="display: none; padding: 225px 0 0 5vw; width: 200px">
+                        <img id="doikknats-pad-defend" src="assets/images/doikknats-pad-defend.png" alt="" style="display: none; padding: 225px 0 0 5vw; width: 200px">
+                        <img id="greedo-pad-defend" src="assets/images/greedo-pad-defend.png" alt="" style="display: none; padding: 235px 0 0 5vw; width: 265px">
+                        <img id="jawa-pad-defend" src="assets/images/jawa-pad-defend.png" alt="" style="display: none; padding: 213px 0 0 5vw; width: 200px">
+                        <img id="luke-pad-defend" src="assets/images/luke-pad-defend.png" alt="" style="display: none; padding: 225px 0 0 5vw; width: 200px">
+                        <img id="obiwan-pad-defend" src="assets/images/obiwan-pad-defend.png" alt="" style="display: none; padding: 225px 0 0 5vw; width: 200px">
+                        <img id="chewbacca-pad-defend" src="assets/images/chewbacca-pad-defend.png" alt="" style="display: none; padding: 500px 0 0 5vw; width: 210px">
+                        <img id="eg6-pad-defend" src="assets/images/eg6-pad-defend.png" alt="" style="display: none; padding: 200px 0 0 5vw; width: 200px">
+                        <img id="han-pad-defend" src="assets/images/han-pad-defend.png" alt="" style="display: none; padding: 225px 0 0 5vw; width: 260px">
+                        <img id="leia-pad-defend" src="assets/images/leia-pad-defend.png" alt="" style="display: none; padding: 260px 0 0 5vw; width: 240px">
+                        <img id="momawnadon-pad-defend" src="assets/images/momawnadon-pad-defend.png" alt="" style="display: none; padding: 225px 0 0 5vw; width: 225px">
+                        <img id="pondababa-pad-defend" src="assets/images/pondababa-pad-defend.png" alt="" style="display: none; padding: 225px 0 0 5vw; width: 200px">
+                        
+                    </div>
     </div>
 
     <div id="col-8" class="column">
-            <div>
+            <div id="eg6">
                     <img src="assets/images/eg6.png" alt="" style="padding: 195px 0 0 30px; width: 50px">
-                    <p style="padding: 0 0 0 35px; text-align: center; color:white;">EG6 <br>  15HP</p>
+                    <p id="eg6-text" style="padding: 0 0 0 35px; text-align: center; color:white;">EG6 <br>  15HP</p>
                 </div>
                 <div>
                         <img id="pad2" src="assets/images/pad2.png" alt="" style="display: none; padding: 56vh 0 0 10px; width: 200px">
@@ -97,37 +134,44 @@
 
     <div id="col-9" class="column">
         
-            <div>
+            <div id="han">
                     <img src="assets/images/han.png" alt="" style="padding: 153px 0 0 30px; width: 85px">
-                    <p style="padding: 0 0 0 0; text-align: center; color:white;">Han <br> Solo <br>  65HP</p>
+                    <p id="han-text" style="padding: 0 0 0 0; text-align: center; color:white;">Han <br> Solo <br>  65HP</p>
                 </div>
-
+                
                 
     </div>
 
     <div id="col-10" class="column">
             
-            <div>
+            <div id="leia">
                     <img src="assets/images/leia.png" alt="" style="padding: 155px 0 0 30px; width: 80px">
-                    <p style="padding: 0 0 0 0; text-align: center; color:white;">Leia<br>  20HP</p>
+                    <p id="leia-text" style="padding: 0 0 0 0; text-align: center; color:white;">Leia<br>  20HP</p>
                 </div>
+                <div>
+                        <h1 id="defender-info" style="display: none; color:white; font-size: 2vw;  position: absolute; top: 350px; overflow: visible; width: 600%; margin-left: 50px;"></h1>   
+                        <h1 id="defender-health" style="display: none; color:white; font-size: 2vw;  position: absolute; top: 390px; overflow: visible; width: 600%; margin-left: 50px;"></h1>   
+                    </div>
+                
     </div>
 
     <div id="col-11" class="column">
             <div style="overflow: visible; display: flex; width: 1000%; margin-left: -950%;" >
                     <h1 style="font-size: 600%; color: white; padding: 30px 0 0 0;">Star Wars Gauntlet!</h1>
                 </div>
-            <div style="position: absolute; padding: 0 70px 0 0;">
+                <div id="momawnadon" style="position: absolute; padding: 0 70px 0 0;">
                     <img src="assets/images/momawnadon.png" alt="" style="padding: 145px 0 0 30px; width: 70px">
-                    <p style="padding: 0 0 0 0; text-align: center; color:white;">Momaw <br> Nadon <br>  20HP</p>
+                    <p id="momawnadon-text" style="padding: 0 0 0 0; text-align: center; color:white;">Momaw <br> Nadon <br>  20HP</p>
                 </div>
+                
+            
     </div>
 
     <div id="col-12" class="column">
         
-        <div>
+            <div id="pondababa">
                 <img src="assets/images/pondababa.png" alt="" style="padding: 148px 0 0 30px; width: 50px">
-                <p style="padding: 0 0 0 35px; text-align: center; color:white;">Ponda <br> Baba <br>  20HP</p>
+                <p id="pondababa-text" style="padding: 0 0 0 35px; text-align: center; color:white;">Ponda <br> Baba <br>  20HP</p>
             </div>
     </div>
 

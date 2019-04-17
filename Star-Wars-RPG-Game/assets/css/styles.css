@@ -45,3 +45,39 @@ html {
     }
 }
 
+.button {
+    background-color: red;
+    border: none;
+    color: white;
+    padding: 10px 20px 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px 0 160px;
+    cursor: pointer;
+    border-radius: 8px;
+    outline: none;
+}
+
+
+.button:hover {
+    background-color: rgb(255, 85, 85);
+}
+
+.button:active {
+    background-color: rgb(182, 0, 0);
+    border: none;
+    color: white;
+    padding: 10px 20px 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px 0 160px;
+    cursor: pointer;
+    border-radius: 8px;
+    outline: none;
+}
+
+
