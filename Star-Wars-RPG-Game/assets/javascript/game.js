@@ -50,9 +50,37 @@ attackerPower = 8;
 
 counterAttack = 0;
 
+c3poIntroAudio = 'assets/sounds/c3poIntroAudio.mp3';
+c3poDeathAudio = 'assets/sounds/c3poDeathAudio.mp3';
+c3poAttackAudio = 'assets/sounds/c3poAttackAudio.mp3';
+
+doikknatsIntroAudio = 'assets/sounds/doikknatsIntroAudio.mp3';
+doikknatsDeathAudio = 'assets/sounds/doikknatsDeathAudio.mp3';
+doikknatsAttackAudio = 'assets/sounds/doikknatsAttackAudio.mp3';
+
+greedoIntroAudio = 'assets/sounds/greedoIntroAudio.mp3';
+greedoDeathAudio = 'assets/sounds/greedoDeathAudio.mp3';
+greedoAttackAudio = 'assets/sounds/blasterAudio.mp3';
+
+jawaIntroAudio = 'assets/sounds/jawaIntroAudio.mp3';
+jawaDeathAudio = 'assets/sounds/jawaDeathAudio.mp3';
+jawaAttackAudio = 'assets/sounds/jawaAttackAudio.mp3';
+
+lukeIntroAudio = 'assets/sounds/lukeIntroAudio.mp3';
+lukeDeathAudio = 'assets/sounds/lukeDeathAudio.mp3';
+lukeAttackAudio = 'assets/sounds/lukeAttackAudio.mp3';
+
+obiwanIntroAudio = 'assets/sounds/obiwanIntroAudio.mp3';
+obiwanDeathAudio = 'assets/sounds/obiwanDeathAudio.mp3';
+obiwanAttackAudio = 'assets/sounds/obiwanAttackAudio.mp3';
+
+
+
 function startGame() {
     document.getElementById("intro-text").style.display = "none";
     document.getElementById("instructions-text").style.display = "block";
+    var audio1 = new Audio('assets/sounds/imperial_march.mp3');
+                    audio1.play();
 }
 
 function closeInstructions() {
@@ -88,6 +116,10 @@ $( "#c3po" ).click(function() {
     if (playerChosen === false) {
         attacker = "#c3po-pad-attack"
         attackerHealth = c3poAttackerHealth;
+        introAudio = c3poIntroAudio;
+        var audio1 = new Audio( introAudio );
+        audio1.play();
+        attackAudio = c3poAttackAudio;
         $(this)
             .css('display','none')
         $( attacker )
@@ -112,6 +144,7 @@ $( "#c3po" ).click(function() {
         defender = "#c3po-pad-defend"
         defenderHealth = c3poDefenderHealth;
         counterAttack = c3poCounterAttack;
+        deathAudio = c3poDeathAudio;
         $( "#choose-next-defender-text" )
             .css('display','none')
         $(this)
@@ -139,6 +172,10 @@ $( "#doikknats" ).click(function() {
     if (playerChosen === false) {
         attacker = "#doikknats-pad-attack"
         attackerHealth = doikknatsAttackerHealth;
+        introAudio = doikknatsIntroAudio;
+        var audio1 = new Audio( introAudio );
+        audio1.play();
+        attackAudio = doikknatsAttackAudio;
         $(this)
             .css('display','none')
         $( attacker )
@@ -163,6 +200,7 @@ $( "#doikknats" ).click(function() {
         defender = "#doikknats-pad-defend"
         defenderHealth = doikknatsDefenderHealth;
         counterAttack = doikknatsCounterAttack;
+        deathAudio = doikknatsDeathAudio;
         $( "#choose-next-defender-text" )
             .css('display','none')
         $(this)
@@ -190,6 +228,10 @@ $( "#greedo" ).click(function() {
     if (playerChosen === false) {
         attacker = "#greedo-pad-attack"
         attackerHealth = greedoAttackerHealth;
+        introAudio = greedoIntroAudio;
+        var audio1 = new Audio( introAudio );
+        audio1.play();
+        attackAudio = greedoAttackAudio;
         $(this)
             .css('display','none')
         $( attacker )
@@ -213,6 +255,7 @@ $( "#greedo" ).click(function() {
         defender = "#greedo-pad-defend"
         defenderHealth = greedoDefenderHealth;
         counterAttack = greedoCounterAttack;
+        deathAudio = greedoDeathAudio;
         $( "#choose-next-defender-text" )
             .css('display','none')
         $(this)
@@ -240,6 +283,10 @@ $( "#jawa" ).click(function() {
     if (playerChosen === false) {
         attacker = "#jawa-pad-attack"
         attackerHealth = jawaAttackerHealth;
+        introAudio = jawaIntroAudio;
+        var audio1 = new Audio( introAudio );
+        audio1.play();
+        attackAudio = jawaAttackAudio;
         $(this)
             .css('display','none')
         $( attacker )
@@ -263,6 +310,7 @@ $( "#jawa" ).click(function() {
         defender = "#jawa-pad-defend"
         defenderHealth = jawaDefenderHealth;
         counterAttack = jawaCounterAttack;
+        deathAudio = jawaDeathAudio;
         $( "#choose-next-defender-text" )
             .css('display','none')
         $(this)
@@ -290,6 +338,10 @@ $( "#luke" ).click(function() {
     if (playerChosen === false) {
         attacker = "#luke-pad-attack"
         attackerHealth = lukeAttackerHealth;
+        introAudio = lukeIntroAudio;
+        var audio1 = new Audio( introAudio );
+        audio1.play();
+        attackAudio = lukeAttackAudio;
         $(this)
             .css('display','none')
         $( attacker )
@@ -313,6 +365,7 @@ $( "#luke" ).click(function() {
         defender = "#luke-pad-defend"
         defenderHealth = lukeDefenderHealth;
         counterAttack = lukeCounterAttack;
+        deathAudio = lukeDeathAudio;
         $( "#choose-next-defender-text" )
             .css('display','none')
         $(this)
@@ -338,6 +391,10 @@ $( "#obiwan" ).click(function() {
     if (playerChosen === false) {
         attackerHealth = obiwanAttackerHealth;
         attacker = "#obiwan-pad-attack"
+        introAudio = obiwanIntroAudio;
+        var audio1 = new Audio( introAudio );
+        audio1.play();
+        attackAudio = obiwanAttackAudio;
         $(this)
             .css('display','none')
         $( attacker )
@@ -363,6 +420,7 @@ $( "#obiwan" ).click(function() {
         defender = "#obiwan-pad-defend"
         defenderHealth = obiwanDefenderHealth;
         counterAttack = obiwanCounterAttack;
+        deathAudio = obiwanDeathAudio;
         $( "#choose-next-defender-text" )
             .css('display','none')
         $(this)
@@ -776,6 +834,8 @@ $("#c3po").mouseenter(function(){
     $( "#attacker-power").html("<h1>Attack Power: " + (attackerPower += 8) + "</h1>")
     $( "#defender-health").html("<h1>Health: " + (defenderHealth -= attackerPower) + "</h1>")
     $( "#attacker-health").html("<h1>Health: " + (attackerHealth -= counterAttack) + "</h1>")
+    var audio3 = new Audio( attackAudio );
+        audio3.play();
     if (defenderHealth <= 0) {
         $( defender )
             .css('display','none')
@@ -787,6 +847,8 @@ $("#c3po").mouseenter(function(){
             .css('display','block')
         defendersRemaining--;
         console.log(defendersRemaining);
+        var audio4 = new Audio( deathAudio );
+        audio4.play();
     }
 
     if (defendersRemaining === 0) {
