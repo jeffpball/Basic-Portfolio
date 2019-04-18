@@ -22,8 +22,10 @@
             <p id="c3po-text" style="padding: 0 0 0 15px; text-align: center; color:white;">C3P0 <br>  20HP</p>
         </div>
         <div>
-            <h1 id="attacker-info" style="display: none; color:white; font-size: 2vw;  position: absolute; top: 350px; overflow: visible; width: 600%; margin-left: 50px;"></h1>   
-            <h1 id="attacker-health" style="display: none; color:white; font-size: 2vw;  position: absolute; top: 390px; overflow: visible; width: 600%; margin-left: 50px;"></h1>   
+            <h1 id="attacker-name" style="display: none; color:white; font-size: 2vw;  position: absolute; top: 350px; overflow: visible; width: 600%; margin-left: 50px;"></h1>   
+            <h1 id="attacker-health" style="display: none; color:white; font-size: 2vw;  position: absolute; top: 390px; overflow: visible; width: 600%; margin-left: 50px;"></h1>
+            <h1 id="attacker-power" style="display: none; color:white; font-size: 2vw;  position: absolute; top: 430px; overflow: visible; width: 600%; margin-left: 50px;"></h1>
+            <h1 id="death-notice" class="pulsate" style="display: none; color:rgb(255, 2, 2); font-size: 2vw;  position: absolute; top: 390px; overflow: visible; width: 600%; margin-left: 50px;">You have died -- Refresh the browser to restart.</h1> 
         </div>
     </div>
 
@@ -50,7 +52,7 @@
             <p id="jawa-text" style="padding: 0 0 0 30px; text-align: center; color:white;">Jawa <br>  20HP</p>
         </div>
         <div id="filler2" style="display:none; padding: 283px 0 0 10px; width: 80px"></div>
-        <div>
+        <div style="display: flex; flex-direction: column; align-items: baseline;">
                 <img id="c3po-pad-attack" src="assets/images/c3po-pad-attack.png" alt="" style="display: none; padding: 225px 0 0 5vw; width: 200px">
                 <img id="doikknats-pad-attack" src="assets/images/doikknats-pad-attack.png" alt="" style="display: none; padding: 225px 0 0 5vw; width: 200px">
                 <img id="greedo-pad-attack" src="assets/images/greedo-pad-attack.png" alt="" style="display: none; padding: 225px 0 0 5vw; width: 265px">
@@ -63,9 +65,9 @@
                 <img id="leia-pad-attack" src="assets/images/leia-pad-attack.png" alt="" style="display: none; padding: 225px 0 0 5vw; width: 240px">
                 <img id="momawnadon-pad-attack" src="assets/images/momawnadon-pad-attack.png" alt="" style="display: none; padding: 225px 0 0 5vw; width: 225px">
                 <img id="pondababa-pad-attack" src="assets/images/pondababa-pad-attack.png" alt="" style="display: none; padding: 225px 0 0 5vw; width: 200px">
-                
+                <button id="attack-button" class="button button1" style="display: none;">Attack</button>
             </div>
-            <button id="attack-button" class="button button1" style="display: none;">Attack</button>
+            
         
     </div>
 
@@ -95,6 +97,9 @@
         </div>
         <div>
             <h1 id="choose-defender-text" class="pulsate" style=" display: none; color:white; font-size: 3vw; padding: 10vh 0 0 0; overflow: visible; width: 600%; margin-left: -45%;">Choose your enemy.</h1>   
+        </div>
+        <div>
+            <h1 id="win-accouncement" class="pulsate" style=" display: none; color:white; font-size: 3vw; padding: 10vh 0 0 0; overflow: visible; width: 600%; margin-left: -145%;">Congratulations! You Win. Even the Jedi are no match for you.</h1>   
         </div>
         
     </div>
@@ -149,8 +154,9 @@
                     <p id="leia-text" style="padding: 0 0 0 0; text-align: center; color:white;">Leia<br>  20HP</p>
                 </div>
                 <div>
-                        <h1 id="defender-info" style="display: none; color:white; font-size: 2vw;  position: absolute; top: 350px; overflow: visible; width: 600%; margin-left: 50px;"></h1>   
-                        <h1 id="defender-health" style="display: none; color:white; font-size: 2vw;  position: absolute; top: 390px; overflow: visible; width: 600%; margin-left: 50px;"></h1>   
+                        <h1 id="defender-name" style="display: none; color:white; font-size: 2vw;  position: absolute; top: 350px; overflow: visible; width: 600%; margin-left: 50px;"></h1>   
+                        <h1 id="defender-health" style="display: none; color:white; font-size: 2vw;  position: absolute; top: 390px; overflow: visible; width: 600%; margin-left: 50px;"></h1>
+                        <h1 id="choose-next-defender-text" class="pulsate" style="display: none; color:white; font-size: 2vw;  position: absolute; top: 390px; overflow: visible; width: 600%; margin-left: 50px;">Choose your next enemy.</h1> 
                     </div>
                 
     </div>

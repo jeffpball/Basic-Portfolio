@@ -1,7 +1,54 @@
 
 fired = 0;
 playerChosen = false;
+c3poAttackerHealth = 20;
+doikknatsAttackerHealth = 25;
+greedoAttackerHealth = 60;
+jawaAttackerHealth = 20;
+lukeAttackerHealth = 75;
+obiwanAttackerHealth = 175;
+chewbaccaAttackerHealth = 80;
+eg6AttackerHealth = 15;
+hanAttackerHealth = 65;
+leiaAttackerHealth = 20;
+momawnadonAttackerHealth = 20;
+pondababaAttackerHealth = 20;
 
+attacker = [];
+
+c3poDefenderHealth = 20;
+doikknatsDefenderHealth = 25;
+greedoDefenderHealth = 60;
+jawaDefenderHealth = 20;
+lukeDefenderHealth = 75;
+obiwanDefenderHealth = 175;
+chewbaccaDefenderHealth = 80;
+eg6DefenderHealth = 15;
+hanDefenderHealth = 65;
+leiaDefenderHealth = 20;
+momawnadonDefenderHealth = 20;
+pondababaDefenderHealth = 20;
+
+c3poCounterAttack = 2;
+doikknatsCounterAttack = 4;
+greedoCounterAttack = 10;
+jawaCounterAttack = 3;
+lukeCounterAttack = 20;
+obiwanCounterAttack = 30;
+chewbaccaCounterAttack = 22;
+eg6CounterAttack = 1;
+hanCounterAttack = 18;
+leiaCounterAttack = 16;
+momawnadonCounterAttack = 5;
+pondababaCounterAttack= 8;
+
+defender = [];
+defendersRemaining = 11;
+defenderHealth = 0;
+
+attackerPower = 8;
+
+counterAttack = 0;
 
 function startGame() {
     document.getElementById("intro-text").style.display = "none";
@@ -39,106 +86,145 @@ document.onclick= function(event) {
 
 $( "#c3po" ).click(function() {
     if (playerChosen === false) {
+        attacker = "#c3po-pad-attack"
+        attackerHealth = c3poAttackerHealth;
         $(this)
             .css('display','none')
-        $( "#c3po-pad-attack")
+        $( attacker )
             .css('display','block')
-        $( "#attacker-info")
-            .html('<h1>Player: C3P0</h1>')
-        $( "#attacker-info")
+        $( "#attacker-name")
+            .html("<h1>Player: C3P0</h1>")
+        $( "#attacker-name")
             .css('display','block')
         $( "#attacker-health")
-            .html('<h1>Health: 20</h1>')
+            .html("<h1>Health: " + attackerHealth + "</h1>")
         $( "#attacker-health")
+            .css('display','block')
+        $( "#attacker-power")
+            .html("<h1>Attack Power: " + attackerPower + "</h1>")
+        $( "#attacker-power")
             .css('display','block')
         $( "#choose-defender-text")
             .css('display','block')
         playerChosen = true;
+        console.log(attacker);
     } else {
+        defender = "#c3po-pad-defend"
+        defenderHealth = c3poDefenderHealth;
+        counterAttack = c3poCounterAttack;
+        $( "#choose-next-defender-text" )
+            .css('display','none')
         $(this)
             .css('display','none')
-        $( "#c3po-pad-defend")
+        $( defender )
             .css('display','block')
-        $( "#defender-info")
-            .html('<h1>Computer: C3P0</h1>')
-        $( "#defender-info")
+        $( "#defender-name")
+            .html("<h1>Computer: C3P0</h1>")
+        $( "#defender-name")
             .css('display','block')
         $( "#defender-health")
-            .html('<h1>Health: 20</h1>')
+            .html("<h1>Health: " + defenderHealth + "</h1>")
         $( "#defender-health")
             .css('display','block')
         $( "#choose-defender-text")
             .css('display','none')
         $( "#attack-button")
             .css('display','block')
+        console.log(defenderHealth);
+        
     }
 });
 
 $( "#doikknats" ).click(function() {
     if (playerChosen === false) {
+        attacker = "#doikknats-pad-attack"
+        attackerHealth = doikknatsAttackerHealth;
         $(this)
             .css('display','none')
-        $( "#doikknats-pad-attack")
+        $( attacker )
             .css('display','block')
-        $( "#attacker-info")
+        $( "#attacker-name")
             .html("<h1>Player: Doikk Na'ts</h1>")
-        $( "#attacker-info")
+        $( "#attacker-name")
             .css('display','block')
         $( "#attacker-health")
-            .html('<h1>Health: 25</h1>')
+            .html("<h1>Health: " + attackerHealth + "</h1>")
         $( "#attacker-health")
+            .css('display','block')
+        $( "#attacker-power")
+            .html("<h1>Attack Power: " + attackerPower + "</h1>")
+        $( "#attacker-power")
             .css('display','block')
         $( "#choose-defender-text")
             .css('display','block')
         playerChosen = true;
+        console.log(attacker);
     } else {
+        defender = "#doikknats-pad-defend"
+        defenderHealth = doikknatsDefenderHealth;
+        counterAttack = doikknatsCounterAttack;
+        $( "#choose-next-defender-text" )
+            .css('display','none')
         $(this)
         .css('display','none')
-        $( "#doikknats-pad-defend")
+        $( defender )
             .css('display','block')
-        $( "#defender-info")
+        $( "#defender-name")
             .html("<h1>Computer: Doikk Na'ts</h1>")
-        $( "#defender-info")
+        $( "#defender-name")
             .css('display','block')
         $( "#defender-health")
-            .html('<h1>Health: 25</h1>')
+            .html("<h1>Health: " + defenderHealth + "</h1>")
         $( "#defender-health")
             .css('display','block')
         $( "#choose-defender-text")
             .css('display','none')
         $( "#attack-button")
             .css('display','block')
+        console.log(defenderHealth);
+        
     }
 });
 
 $( "#greedo" ).click(function() {
     if (playerChosen === false) {
+        attacker = "#greedo-pad-attack"
+        attackerHealth = greedoAttackerHealth;
         $(this)
             .css('display','none')
-        $( "#greedo-pad-attack")
+        $( attacker )
             .css('display','block')
-        $( "#attacker-info")
+        $( "#attacker-name")
             .html('<h1>Player: Greedo</h1>')
-        $( "#attacker-info")
+        $( "#attacker-name")
             .css('display','block')
         $( "#attacker-health")
-            .html('<h1>Health: 60</h1>')
+            .html("<h1>Health: " + attackerHealth + "</h1>")
         $( "#attacker-health")
+            .css('display','block')
+        $( "#attacker-power")
+            .html("<h1>Attack Power: " + attackerPower + "</h1>")
+        $( "#attacker-power")
             .css('display','block')
         $( "#choose-defender-text")
             .css('display','block')
         playerChosen = true;
     } else {
+        defender = "#greedo-pad-defend"
+        defenderHealth = greedoDefenderHealth;
+        counterAttack = greedoCounterAttack;
+        $( "#choose-next-defender-text" )
+            .css('display','none')
         $(this)
         .css('display','none')
-        $( "#greedo-pad-defend")
+        $( defender )
             .css('display','block')
-        $( "#defender-info")
+        $( "#defender-name")
             .html("<h1>Computer: Greedo</h1>")
-        $( "#defender-info")
+        $( "#defender-name")
             .css('display','block')
         $( "#defender-health")
-            .html('<h1>Health: 60</h1>')
+            .html("<h1>Health: " + defenderHealth + "</h1>")
         $( "#defender-health")
             .css('display','block')
         $( "#choose-defender-text")
@@ -152,32 +238,43 @@ $( "#greedo" ).click(function() {
 
 $( "#jawa" ).click(function() {
     if (playerChosen === false) {
+        attacker = "#jawa-pad-attack"
+        attackerHealth = jawaAttackerHealth;
         $(this)
             .css('display','none')
-        $( "#jawa-pad-attack")
+        $( attacker )
             .css('display','block')
-        $( "#attacker-info")
+        $( "#attacker-name")
             .html('<h1>Player: Jawa</h1>')
-        $( "#attacker-info")
+        $( "#attacker-name")
             .css('display','block')
         $( "#attacker-health")
-            .html('<h1>Health: 20</h1>')
+            .html("<h1>Health: " + attackerHealth + "</h1>")
         $( "#attacker-health")
+            .css('display','block')
+        $( "#attacker-power")
+            .html("<h1>Attack Power: " + attackerPower + "</h1>")
+        $( "#attacker-power")
             .css('display','block')
         $( "#choose-defender-text")
             .css('display','block')
         playerChosen = true;
     } else {
+        defender = "#jawa-pad-defend"
+        defenderHealth = jawaDefenderHealth;
+        counterAttack = jawaCounterAttack;
+        $( "#choose-next-defender-text" )
+            .css('display','none')
         $(this)
         .css('display','none')
-        $( "#jawa-pad-defend")
+        $( defender )
             .css('display','block')
-        $( "#defender-info")
+        $( "#defender-name")
             .html("<h1>Computer: Jawa</h1>")
-        $( "#defender-info")
+        $( "#defender-name")
             .css('display','block')
         $( "#defender-health")
-            .html('<h1>Health: 20</h1>')
+            .html("<h1>Health: " + defenderHealth + "</h1>")
         $( "#defender-health")
             .css('display','block')
         $( "#choose-defender-text")
@@ -191,32 +288,43 @@ $( "#jawa" ).click(function() {
 
 $( "#luke" ).click(function() {
     if (playerChosen === false) {
+        attacker = "#luke-pad-attack"
+        attackerHealth = lukeAttackerHealth;
         $(this)
             .css('display','none')
-        $( "#luke-pad-attack")
+        $( attacker )
             .css('display','block')
-        $( "#attacker-info")
+        $( "#attacker-name")
             .html('<h1>Player: Luke</h1>')
-        $( "#attacker-info")
+        $( "#attacker-name")
             .css('display','block')
         $( "#attacker-health")
-            .html('<h1>Health: 65</h1>')
+            .html("<h1>Health: " + attackerHealth + "</h1>")
         $( "#attacker-health")
+            .css('display','block')
+        $( "#attacker-power")
+            .html("<h1>Attack Power: " + attackerPower + "</h1>")
+        $( "#attacker-power")
             .css('display','block')
         $( "#choose-defender-text")
             .css('display','block')
         playerChosen = true;
     } else {
+        defender = "#luke-pad-defend"
+        defenderHealth = lukeDefenderHealth;
+        counterAttack = lukeCounterAttack;
+        $( "#choose-next-defender-text" )
+            .css('display','none')
         $(this)
         .css('display','none')
-        $( "#luke-pad-defend")
+        $( defender )
             .css('display','block')
-        $( "#defender-info")
+        $( "#defender-name")
             .html("<h1>Computer: Luke</h1>")
-        $( "#defender-info")
+        $( "#defender-name")
             .css('display','block')
         $( "#defender-health")
-            .html('<h1>Health: 75</h1>')
+            .html("<h1>Health: " + defenderHealth + "</h1>")
         $( "#defender-health")
             .css('display','block')
         $( "#choose-defender-text")
@@ -228,34 +336,45 @@ $( "#luke" ).click(function() {
 
 $( "#obiwan" ).click(function() {
     if (playerChosen === false) {
+        attackerHealth = obiwanAttackerHealth;
+        attacker = "#obiwan-pad-attack"
         $(this)
             .css('display','none')
-        $( "#obiwan-pad-attack")
+        $( attacker )
             .css('display','block')
-        $( "#attacker-info")
+        $( "#attacker-name")
             .html('<h1>Player: Obiwan</h1>')
-        $( "#attacker-info")
+        $( "#attacker-name")
             .css('display','block')
         $( "#attacker-health")
-            .html('<h1>Health: 130</h1>')
+            .html("<h1>Health: " + attackerHealth + "</h1>")
         $( "#attacker-health")
             .css('display','block')
         $( "#choose-defender-text")
+            .css('display','block')
+        $( "#attacker-power")
+            .html("<h1>Attack Power: " + attackerPower + "</h1>")
+        $( "#attacker-power")
             .css('display','block')
         $( "#filler3")
             .css('display','block')
         playerChosen = true;
      } else {
+        defender = "#obiwan-pad-defend"
+        defenderHealth = obiwanDefenderHealth;
+        counterAttack = obiwanCounterAttack;
+        $( "#choose-next-defender-text" )
+            .css('display','none')
         $(this)
         .css('display','none')
-        $( "#obiwan-pad-defend")
+        $( defender )
             .css('display','block')
-        $( "#defender-info")
+        $( "#defender-name")
             .html("<h1>Computer: Obiwan</h1>")
-        $( "#defender-info")
+        $( "#defender-name")
             .css('display','block')
         $( "#defender-health")
-            .html('<h1>Health: 175</h1>')
+            .html("<h1>Health: " + defenderHealth + "</h1>")
         $( "#defender-health")
             .css('display','block')
         $( "#choose-defender-text")
@@ -267,34 +386,45 @@ $( "#obiwan" ).click(function() {
 
 $( "#chewbacca" ).click(function() {
     if (playerChosen === false) {
+        attackerHealth = chewbaccaAttackerHealth;
+        attacker = "#chewbacca-pad-attack"
         $(this)
             .css('display','none')
-        $( "#chewbacca-pad-attack")
+        $( attacker )
             .css('display','block')
-        $( "#attacker-info")
+        $( "#attacker-name")
             .html('<h1>Player: Chewbacca</h1>')
-        $( "#attacker-info")
+        $( "#attacker-name")
             .css('display','block')
         $( "#attacker-health")
-            .html('<h1>Health: 80</h1>')
+            .html("<h1>Health: " + attackerHealth + "</h1>")
         $( "#attacker-health")
             .css('display','block')
         $( "#choose-defender-text")
+            .css('display','block')
+        $( "#attacker-power")
+            .html("<h1>Attack Power: " + attackerPower + "</h1>")
+        $( "#attacker-power")
             .css('display','block')
         $( "#filler1")
             .css('display','block')
         playerChosen = true;
     } else {
+        defender = "#chewbacca-pad-defend"
+        defenderHealth = chewbaccaDefenderHealth;
+        counterAttack = chewbaccaCounterAttack;
+        $( "#choose-next-defender-text" )
+            .css('display','none')
         $(this)
         .css('display','none')
-        $( "#chewbacca-pad-defend")
+        $( defender )
             .css('display','block')
-        $( "#defender-info")
+        $( "#defender-name" )
             .html("<h1>Computer: Chewbacca</h1>")
-        $( "#defender-info")
+        $( "#defender-name")
             .css('display','block')
         $( "#defender-health")
-            .html('<h1>Health: 80</h1>')
+            .html("<h1>Health: " + defenderHealth + "</h1>")
         $( "#defender-health")
             .css('display','block')
         $( "#choose-defender-text")
@@ -306,32 +436,43 @@ $( "#chewbacca" ).click(function() {
 
 $( "#eg6" ).click(function() {
     if (playerChosen === false) {
+        attackerHealth = eg6AttackerHealth;
+        attacker = "#eg6-pad-attack"
         $(this)
             .css('display','none')
-        $( "#eg6-pad-attack")
+        $( attacker )
             .css('display','block')
-        $( "#attacker-info")
+        $( "#attacker-name")
             .html('<h1>Player: EG6</h1>')
-        $( "#attacker-info")
+        $( "#attacker-name")
             .css('display','block')
         $( "#attacker-health")
-            .html('<h1>Health: 15</h1>')
+            .html("<h1>Health: " + attackerHealth + "</h1>")
         $( "#attacker-health")
+            .css('display','block')
+        $( "#attacker-power")
+            .html("<h1>Attack Power: " + attackerPower + "</h1>")
+        $( "#attacker-power")
             .css('display','block')
         $( "#choose-defender-text")
             .css('display','block')
         playerChosen = true;
     } else {
+        defender = "#eg6-pad-defend"
+        defenderHealth = eg6DefenderHealth;
+        counterAttack = eg6CounterAttack;
+        $( "#choose-next-defender-text" )
+            .css('display','none')
         $(this)
         .css('display','none')
-        $( "#eg6-pad-defend")
+        $( defender )
             .css('display','block')
-        $( "#defender-info")
+        $( "#defender-name")
             .html("<h1>Computer: EG6</h1>")
-        $( "#defender-info")
+        $( "#defender-name")
             .css('display','block')
         $( "#defender-health")
-            .html('<h1>Health: 15</h1>')
+            .html("<h1>Health: " + defenderHealth + "</h1>")
         $( "#defender-health")
             .css('display','block')
         $( "#choose-defender-text")
@@ -343,32 +484,43 @@ $( "#eg6" ).click(function() {
 
 $( "#han" ).click(function() {
     if (playerChosen === false) {
+        attackerHealth = hanAttackerHealth;
+        attacker = "#han-pad-attack"
         $(this)
             .css('display','none')
-        $( "#han-pad-attack")
+        $( attacker )
             .css('display','block')
-        $( "#attacker-info")
+        $( "#attacker-name")
             .html('<h1>Player: Han</h1>')
-        $( "#attacker-info")
+        $( "#attacker-name")
             .css('display','block')
         $( "#attacker-health")
-            .html('<h1>Health: 115</h1>')
+            .html("<h1>Health: " + attackerHealth + "</h1>")
         $( "#attacker-health")
+            .css('display','block')
+        $( "#attacker-power")
+            .html("<h1>Attack Power: " + attackerPower + "</h1>")
+        $( "#attacker-power")
             .css('display','block')
         $( "#choose-defender-text")
             .css('display','block')
         playerChosen = true;
     } else {
+        defender = "#han-pad-defend"
+        defenderHealth = hanDefenderHealth;
+        counterAttack = hanCounterAttack;
+        $( "#choose-next-defender-text" )
+            .css('display','none')
         $(this)
         .css('display','none')
-        $( "#han-pad-defend")
+        $( defender )
             .css('display','block')
-        $( "#defender-info")
+        $( "#defender-name")
             .html("<h1>Computer: Han</h1>")
-        $( "#defender-info")
+        $( "#defender-name")
             .css('display','block')
         $( "#defender-health")
-            .html('<h1>Health: 65</h1>')
+            .html("<h1>Health: " + defenderHealth + "</h1>")
         $( "#defender-health")
             .css('display','block')
         $( "#choose-defender-text")
@@ -380,32 +532,43 @@ $( "#han" ).click(function() {
 
 $( "#leia" ).click(function() {
     if (playerChosen === false) {
+        attackerHealth = leiaAttackerHealth;
+        attacker = "#leia-pad-attack"
         $(this)
             .css('display','none')
-        $( "#leia-pad-attack")
+        $( attacker )
             .css('display','block')
-        $( "#attacker-info")
+        $( "#attacker-name")
             .html('<h1>Player: Leia</h1>')
-        $( "#attacker-info")
+        $( "#attacker-name")
             .css('display','block')
         $( "#attacker-health")
-            .html('<h1>Health: 115</h1>')
+            .html("<h1>Health: " + attackerHealth + "</h1>")
         $( "#attacker-health")
+            .css('display','block')
+        $( "#attacker-power")
+            .html("<h1>Attack Power: " + attackerPower + "</h1>")
+        $( "#attacker-power")
             .css('display','block')
         $( "#choose-defender-text")
             .css('display','block')
         playerChosen = true;
     } else {
+        defender = "#leia-pad-defend"
+        defenderHealth = leiaDefenderHealth;
+        counterAttack = leiaCounterAttack;
+        $( "#choose-next-defender-text" )
+            .css('display','none')
         $(this)
         .css('display','none')
-        $( "#leia-pad-defend")
+        $( defender )
             .css('display','block')
-        $( "#defender-info")
+        $( "#defender-name")
             .html("<h1>Computer: Leia</h1>")
-        $( "#defender-info")
+        $( "#defender-name")
             .css('display','block')
         $( "#defender-health")
-            .html('<h1>Health: 65</h1>')
+            .html("<h1>Health: " + defenderHealth + "</h1>")
         $( "#defender-health")
             .css('display','block')
         $( "#choose-defender-text")
@@ -417,32 +580,43 @@ $( "#leia" ).click(function() {
 
 $( "#momawnadon" ).click(function() {
     if (playerChosen === false) {
+        attackerHealth = momawnadonAttackerHealth;
+        attacker = "#momawnadon-pad-attack"
         $(this)
             .css('display','none')
-        $( "#momawnadon-pad-attack")
+        $( attacker )
             .css('display','block')
-        $( "#attacker-info")
+        $( "#attacker-name")
             .html('<h1>Player: Momaw Nadon</h1>')
-        $( "#attacker-info")
+        $( "#attacker-name")
             .css('display','block')
         $( "#attacker-health")
-            .html('<h1>Health: 30</h1>')
+            .html("<h1>Health: " + attackerHealth + "</h1>")
         $( "#attacker-health")
+            .css('display','block')
+        $( "#attacker-power")
+            .html("<h1>Attack Power: " + attackerPower + "</h1>")
+        $( "#attacker-power")
             .css('display','block')
         $( "#choose-defender-text")
             .css('display','block')
         playerChosen = true;
     } else {
+        defender = "#momawnadon-pad-defend"
+        defenderHealth = momawnadonDefenderHealth;
+        counterAttack = momawnadonCounterAttack;
+        $( "#choose-next-defender-text" )
+            .css('display','none')
         $(this)
         .css('display','none')
-        $( "#momawnadon-pad-defend")
+        $( defender )
             .css('display','block')
-        $( "#defender-info")
+        $( "#defender-name")
             .html("<h1>Computer: Momaw Nadon</h1>")
-        $( "#defender-info")
+        $( "#defender-name")
             .css('display','block')
         $( "#defender-health")
-            .html('<h1>Health: 65</h1>')
+            .html("<h1>Health: " + defenderHealth + "</h1>")
         $( "#defender-health")
             .css('display','block')
         $( "#choose-defender-text")
@@ -454,32 +628,43 @@ $( "#momawnadon" ).click(function() {
 
 $( "#pondababa" ).click(function() {
     if (playerChosen === false) {
+        attackerHealth = pondababaAttackerHealth;
+        attacker = "#pondababa-pad-attack"
         $(this)
             .css('display','none')
-        $( "#pondababa-pad-attack" )
+        $( attacker )
             .css('display','block')
-            $( "#attacker-info")
+        $( "#attacker-name")
             .html('<h1>Player: Ponda Baba</h1>')
-        $( "#attacker-info")
+        $( "#attacker-name")
             .css('display','block')
         $( "#attacker-health")
-            .html('<h1>Health: 45</h1>')
+            .html("<h1>Health: " + attackerHealth + "</h1>")
         $( "#attacker-health")
+            .css('display','block')
+        $( "#attacker-power")
+            .html("<h1>Attack Power: " + attackerPower + "</h1>")
+        $( "#attacker-power")
             .css('display','block')
         $( "#choose-defender-text")
             .css('display','block')
         playerChosen = true;
     } else {
+        defender = "#pondababa-pad-defend"
+        defenderHealth = pondababaDefenderHealth;
+        counterAttack = pondababaCounterAttack;
+        $( "#choose-next-defender-text" )
+            .css('display','none')
         $(this)
         .css('display','none')
-        $( "#pondababa-pad-defend")
+        $( defender )
             .css('display','block')
-        $( "#defender-info")
+        $( "#defender-name")
             .html("<h1>Computer: Panda Baba</h1>")
-        $( "#defender-info")
+        $( "#defender-name")
             .css('display','block')
         $( "#defender-health")
-            .html('<h1>Health: 65</h1>')
+            .html("<h1>Health: " + defenderHealth + "</h1>")
         $( "#defender-health")
             .css('display','block')
         $( "#choose-defender-text")
@@ -587,5 +772,56 @@ $("#c3po").mouseenter(function(){
     $("#pondababa-text").css("color", "white");
   });
 
+  $( "#attack-button" ).click(function() {
+    $( "#attacker-power").html("<h1>Attack Power: " + (attackerPower += 8) + "</h1>")
+    $( "#defender-health").html("<h1>Health: " + (defenderHealth -= attackerPower) + "</h1>")
+    $( "#attacker-health").html("<h1>Health: " + (attackerHealth -= counterAttack) + "</h1>")
+    if (defenderHealth <= 0) {
+        $( defender )
+            .css('display','none')
+        $( "#defender-name" )
+            .css('display','none')
+        $( "#defender-health" )
+            .css('display','none')
+        $( "#choose-next-defender-text" )
+            .css('display','block')
+        defendersRemaining--;
+        console.log(defendersRemaining);
+    }
+
+    if (defendersRemaining === 0) {
+        $( attacker )
+            .css('display','none')
+        $( "#attacker-name")
+            .css('display','none')
+        $( "#attacker-health")
+            .css('display','none')
+        $( "#attacker-power")
+            .css('display','none')
+        $( "#attack-button" )
+            .css('display','none')
+        $( "#win-accouncement" )
+            .css('display','block')
+        $( "#choose-next-defender-text")
+            .css('display','none')
+    }
+
+    if (attackerHealth <= 0) {
+        $( attacker )
+            .css('display','none')
+        $( defender )
+            .css('display','none')
+        $( "#attacker-name")
+            .css('display','none')
+        $( "#attacker-health")
+            .css('display','none')
+        $( "#attacker-power")
+            .css('display','none')
+        $( "#death-notice")
+            .css('display','block')
+        $( "#attack-button" )
+            .css('display','none')
+    }
+    });
 
 
