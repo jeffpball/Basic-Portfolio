@@ -1,54 +1,56 @@
 
 fired = 0;
 playerChosen = false;
-c3poAttackerHealth = 20;
-doikknatsAttackerHealth = 25;
-greedoAttackerHealth = 60;
-jawaAttackerHealth = 20;
-lukeAttackerHealth = 75;
-obiwanAttackerHealth = 175;
+c3poAttackerHealth = 35;
+doikknatsAttackerHealth = 40;
+greedoAttackerHealth = 65;
+jawaAttackerHealth = 35;
+lukeAttackerHealth = 85;
+obiwanAttackerHealth = 125;
 chewbaccaAttackerHealth = 80;
-eg6AttackerHealth = 15;
+eg6AttackerHealth = 30;
 hanAttackerHealth = 65;
-leiaAttackerHealth = 20;
-momawnadonAttackerHealth = 20;
-pondababaAttackerHealth = 20;
+leiaAttackerHealth = 60;
+momawnadonAttackerHealth = 32;
+pondababaAttackerHealth = 35;
 
 attacker = [];
 
-c3poDefenderHealth = 20;
-doikknatsDefenderHealth = 25;
-greedoDefenderHealth = 60;
-jawaDefenderHealth = 20;
-lukeDefenderHealth = 75;
-obiwanDefenderHealth = 175;
+c3poDefenderHealth = 30;
+doikknatsDefenderHealth = 40;
+greedoDefenderHealth = 65;
+jawaDefenderHealth = 35;
+lukeDefenderHealth = 85;
+obiwanDefenderHealth = 100;
 chewbaccaDefenderHealth = 80;
-eg6DefenderHealth = 15;
+eg6DefenderHealth = 25;
 hanDefenderHealth = 65;
-leiaDefenderHealth = 20;
-momawnadonDefenderHealth = 20;
-pondababaDefenderHealth = 20;
+leiaDefenderHealth = 60;
+momawnadonDefenderHealth = 30;
+pondababaDefenderHealth = 35;
 
-c3poCounterAttack = 2;
-doikknatsCounterAttack = 4;
-greedoCounterAttack = 10;
-jawaCounterAttack = 3;
-lukeCounterAttack = 20;
-obiwanCounterAttack = 30;
-chewbaccaCounterAttack = 22;
+c3poCounterAttack = 1;
+doikknatsCounterAttack = 1;
+greedoCounterAttack = 2;
+jawaCounterAttack = 1;
+lukeCounterAttack = 3;
+obiwanCounterAttack = 5;
+chewbaccaCounterAttack = 4;
 eg6CounterAttack = 1;
-hanCounterAttack = 18;
-leiaCounterAttack = 16;
-momawnadonCounterAttack = 5;
-pondababaCounterAttack= 8;
+hanCounterAttack = 3;
+leiaCounterAttack = 2;
+momawnadonCounterAttack = 1;
+pondababaCounterAttack= 1;
 
 defender = [];
 defendersRemaining = 11;
 defenderHealth = 0;
 
-attackerPower = 8;
+attackerPower = 0;
 
 counterAttack = 0;
+
+winAudio = 'assets/sounds/star-wars-theme-song.mp3';
 
 c3poIntroAudio = 'assets/sounds/c3poIntroAudio.mp3';
 c3poDeathAudio = 'assets/sounds/c3poDeathAudio.mp3';
@@ -73,6 +75,30 @@ lukeAttackAudio = 'assets/sounds/lukeAttackAudio.mp3';
 obiwanIntroAudio = 'assets/sounds/obiwanIntroAudio.mp3';
 obiwanDeathAudio = 'assets/sounds/obiwanDeathAudio.mp3';
 obiwanAttackAudio = 'assets/sounds/obiwanAttackAudio.mp3';
+
+chewbaccaIntroAudio = 'assets/sounds/chewbaccaIntroAudio.mp3';
+chewbaccaDeathAudio = 'assets/sounds/chewbaccaDeathAudio.mp3';
+chewbaccaAttackAudio = 'assets/sounds/chewbaccaAttackAudio.mp3';
+
+eg6IntroAudio = 'assets/sounds/eg6IntroAudio.mp3';
+eg6DeathAudio = 'assets/sounds/eg6DeathAudio.mp3';
+eg6AttackAudio = 'assets/sounds/eg6AttackAudio.mp3';
+
+hanIntroAudio = 'assets/sounds/hanIntroAudio.mp3';
+hanDeathAudio = 'assets/sounds/hanDeathAudio.mp3';
+hanAttackAudio = 'assets/sounds/hanAttackAudio.wav';
+
+leiaIntroAudio = 'assets/sounds/leiaIntroAudio.mp3';
+leiaDeathAudio = 'assets/sounds/leiaDeathAudio.mp3';
+leiaAttackAudio = 'assets/sounds/leiaAttackAudio.mp3';
+
+momawnadonIntroAudio = 'assets/sounds/momawnadonIntroAudio.mp3';
+momawnadonDeathAudio = 'assets/sounds/momawnadonDeathAudio.mp3';
+momawnadonAttackAudio = 'assets/sounds/momawnadonAttackAudio.mp3';
+
+pondababaIntroAudio = 'assets/sounds/pondababaIntroAudio.mp3';
+pondababaDeathAudio = 'assets/sounds/pondababaDeathAudio.mp3';
+pondababaAttackAudio = 'assets/sounds/pondababaAttackAudio.mp3';
 
 
 
@@ -446,6 +472,10 @@ $( "#chewbacca" ).click(function() {
     if (playerChosen === false) {
         attackerHealth = chewbaccaAttackerHealth;
         attacker = "#chewbacca-pad-attack"
+        introAudio = chewbaccaIntroAudio;
+        var audio1 = new Audio( introAudio );
+        audio1.play();
+        attackAudio = chewbaccaAttackAudio;
         $(this)
             .css('display','none')
         $( attacker )
@@ -471,6 +501,7 @@ $( "#chewbacca" ).click(function() {
         defender = "#chewbacca-pad-defend"
         defenderHealth = chewbaccaDefenderHealth;
         counterAttack = chewbaccaCounterAttack;
+        deathAudio = chewbaccaDeathAudio;
         $( "#choose-next-defender-text" )
             .css('display','none')
         $(this)
@@ -496,6 +527,10 @@ $( "#eg6" ).click(function() {
     if (playerChosen === false) {
         attackerHealth = eg6AttackerHealth;
         attacker = "#eg6-pad-attack"
+        introAudio = eg6IntroAudio;
+        var audio1 = new Audio( introAudio );
+        audio1.play();
+        attackAudio = eg6AttackAudio;
         $(this)
             .css('display','none')
         $( attacker )
@@ -519,6 +554,7 @@ $( "#eg6" ).click(function() {
         defender = "#eg6-pad-defend"
         defenderHealth = eg6DefenderHealth;
         counterAttack = eg6CounterAttack;
+        deathAudio = eg6DeathAudio;
         $( "#choose-next-defender-text" )
             .css('display','none')
         $(this)
@@ -544,6 +580,10 @@ $( "#han" ).click(function() {
     if (playerChosen === false) {
         attackerHealth = hanAttackerHealth;
         attacker = "#han-pad-attack"
+        introAudio = hanIntroAudio;
+        var audio1 = new Audio( introAudio );
+        audio1.play();
+        attackAudio = hanAttackAudio;
         $(this)
             .css('display','none')
         $( attacker )
@@ -567,6 +607,7 @@ $( "#han" ).click(function() {
         defender = "#han-pad-defend"
         defenderHealth = hanDefenderHealth;
         counterAttack = hanCounterAttack;
+        deathAudio = hanDeathAudio;
         $( "#choose-next-defender-text" )
             .css('display','none')
         $(this)
@@ -592,6 +633,10 @@ $( "#leia" ).click(function() {
     if (playerChosen === false) {
         attackerHealth = leiaAttackerHealth;
         attacker = "#leia-pad-attack"
+        introAudio = leiaIntroAudio;
+        var audio1 = new Audio( introAudio );
+        audio1.play();
+        attackAudio = leiaAttackAudio;
         $(this)
             .css('display','none')
         $( attacker )
@@ -615,6 +660,7 @@ $( "#leia" ).click(function() {
         defender = "#leia-pad-defend"
         defenderHealth = leiaDefenderHealth;
         counterAttack = leiaCounterAttack;
+        deathAudio = leiaDeathAudio;
         $( "#choose-next-defender-text" )
             .css('display','none')
         $(this)
@@ -640,6 +686,10 @@ $( "#momawnadon" ).click(function() {
     if (playerChosen === false) {
         attackerHealth = momawnadonAttackerHealth;
         attacker = "#momawnadon-pad-attack"
+        introAudio = momawnadonIntroAudio;
+        var audio1 = new Audio( introAudio );
+        audio1.play();
+        attackAudio = momawnadonAttackAudio;
         $(this)
             .css('display','none')
         $( attacker )
@@ -663,6 +713,7 @@ $( "#momawnadon" ).click(function() {
         defender = "#momawnadon-pad-defend"
         defenderHealth = momawnadonDefenderHealth;
         counterAttack = momawnadonCounterAttack;
+        deathAudio = momawnadonDeathAudio;
         $( "#choose-next-defender-text" )
             .css('display','none')
         $(this)
@@ -688,6 +739,10 @@ $( "#pondababa" ).click(function() {
     if (playerChosen === false) {
         attackerHealth = pondababaAttackerHealth;
         attacker = "#pondababa-pad-attack"
+        introAudio = pondababaIntroAudio;
+        var audio1 = new Audio( introAudio );
+        audio1.play();
+        attackAudio = pondababaAttackAudio;
         $(this)
             .css('display','none')
         $( attacker )
@@ -711,6 +766,7 @@ $( "#pondababa" ).click(function() {
         defender = "#pondababa-pad-defend"
         defenderHealth = pondababaDefenderHealth;
         counterAttack = pondababaCounterAttack;
+        deathAudio = pondababaDeathAudio;
         $( "#choose-next-defender-text" )
             .css('display','none')
         $(this)
@@ -833,7 +889,12 @@ $("#c3po").mouseenter(function(){
   $( "#attack-button" ).click(function() {
     $( "#attacker-power").html("<h1>Attack Power: " + (attackerPower += 8) + "</h1>")
     $( "#defender-health").html("<h1>Health: " + (defenderHealth -= attackerPower) + "</h1>")
-    $( "#attacker-health").html("<h1>Health: " + (attackerHealth -= counterAttack) + "</h1>")
+        .css('color','red')
+        setTimeout("document.getElementById('defender-health').style.color='white';", 100);
+    $( "#attacker-health")
+        .html("<h1>Health: " + (attackerHealth -= counterAttack) + "</h1>")
+        .css('color','red')
+    setTimeout("document.getElementById('attacker-health').style.color='white';", 100);             
     var audio3 = new Audio( attackAudio );
         audio3.play();
     if (defenderHealth <= 0) {
@@ -866,6 +927,8 @@ $("#c3po").mouseenter(function(){
             .css('display','block')
         $( "#choose-next-defender-text")
             .css('display','none')
+        var audio5 = new Audio( winAudio );
+            audio5.play();
     }
 
     if (attackerHealth <= 0) {
