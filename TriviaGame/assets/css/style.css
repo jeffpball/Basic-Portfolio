@@ -9,23 +9,24 @@
 } */
 
 #title {
+
     text-align: center;
     margin-top: 10vh;
     padding-bottom: 2vh;
+    padding-left: 2vh;
+    padding-right: 2vh;
     font-family: 'Comfortaa', cursive;
     font-size: 200%;
     font-weight: bolder;
 }
 
 #subtitle {
+    padding-bottom: 2vh;
+    padding-left: 2vh;
     text-align: center;
     font-family: 'Comfortaa', cursive;
     font-size: 200%;
 }
-
-.correct, .incorrect {
-    text-transform: capitalize;
-  }
 
 text {
     font-family: 'Comfortaa', cursive;
@@ -33,14 +34,35 @@ text {
 }
 
 #start_button {
-    
+    display: block;
+    margin: auto;
+    padding: 1vh;
 }
 
-#timer, #question_div, #choices_div, #correct, #incorrect {
+#timer, #question_div {
     padding-top: 10vh;
     font-family: 'Comfortaa', cursive;
     font-size: 200%;
     margin-left: auto;
     margin-right: auto;
     text-align: center;
+    padding-bottom: 2vh;
+    padding-left: 2vh;
+}
+
+#choices_div, .correct, .incorrect, #unanswered, #time_is_up {
+    padding-top: 3vh;
+    font-family: 'Comfortaa', cursive;
+    font-size: 200%;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+    padding-bottom: 2vh;
+    padding-left: 2vh;
+    text-transform: capitalize;
+  }
+
+#choices_div button {
+    padding: 1vh;
+    margin: 20px;
 }

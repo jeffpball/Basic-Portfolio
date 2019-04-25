@@ -1,58 +1,57 @@
 $.fn.trivia = function() {
-    var _t = this;
-    _t.userPick = null;
-    _t.answers = {
+    var trivia = this;
+    trivia.userPick = null;
+    trivia.answers = {
         correct: 0,
         incorrect: 0
     };
-    _t.images = null;
-    _t.count = 30;
-    _t.current = 0;
-    _t.questions = [{
-        question: "In Aladdin, what is the name of Jasmine's pet tiger?",
-        choices: ["Rajah", "Bo", "Iago", "Jack"],
-        images: ["../images/Rajah.gif"],
-        correct: 0
-    }, {
-        question: "In Peter Pan, Captain Hook had a hook on which part of his     body?",
-        choices: ["Right Foot", "Left Hand", "Left Foot", "Right Hand"],
+    trivia.images = null;
+    trivia.count = 30;
+    trivia.current = 0;
+    trivia.questions = [{
+        question: "What percent of the Roman population were plebians?",
+        choices: ["42%", "90%", "55%", "36%"],
         correct: 1
-
     }, {
-        question: "In the Lion King, where does Mufasa and his family live?",
-        choices: ["Rocky Mountain", "Forest", "Desert", "Pride Rock"],
-        correct: 3
-
-    }, {
-        question: "In Beauty and the Beast, how many eggs does Gaston eat for    breakfast?",
-        choices: ["2 Dozen", "5 Dozen", "5000", "0"],
-        correct: 1
-
-    }, {
-        question: "In Alice in Wonderland, what is the name of Alice’s kitten?",
-        choices: ["Dinah", "Sammie", "Kat", "Luna"],
-        correct: 0
-
-    }, {
-        question: "After being on earth, where did Hercules first meet his   father Zeus?",
-        choices: ["Mount Olympus", "Greece", "In the Temple of Zeus", "Elysian   Fields"],
+        question: "Gladiator fights were held where?",
+        choices: ["The Podiam", "The Prosetheum", "The Colosseum", "The Parthanon"],
         correct: 2
 
     }, {
-        question: "During the ballroom scene of Beauty & the Beast, what color is Belle’s Gown?",
-        choices: ["Yellow", "Blue", "Gold", "White"],
+        question: "How many consuls were there at a time?",
+        choices: ["1", "2", "3", "4"],
+        correct: 1
+
+    }, {
+        question: "How old was Caesar when he became consul?",
+        choices: ["13", "20", "41", "32", "88"],
         correct: 2
 
     }, {
-        question: "In Bambi, what word does the owl use to describe falling in love?",
-        choices: ["Whimsical", "Miserable", "Joyful", "Twitterpatted"],
+        question: "Which of these lands were not conquered by the Romans?",
+        choices: ["Persia", "Spain", "Greece", "France"],
+        correct: 0
+
+    }, {
+        question: "Between 509 B.C. and 27 B.C. what type of government was Rome?",
+        choices: ["Oligarchy", "Democracy", "Republic", "Monarcy"],
         correct: 3
+
+    }, {
+        question: "Emperor Constantine was the first emperor that was ______?",
+        choices: ["Hindu", "Christian", "Muslim", "Jewish"],
+        correct: 1
+
+    }, {
+        question: "How many hills protected Rome from the river?",
+        choices: ["5", "6", "7", "8"],
+        correct: 2
     }];
-    _t.ask = function() {
-        if (_t.questions[_t.current]) {
-            $("#timer").html("Time remaining: " + "00:" + _t.count + " secs");
-            $("#question_div").html(_t.questions[_t.current].question);
-            var choicesArr = _t.questions[_t.current].choices;
+    trivia.ask = function() {
+        if (trivia.questions[trivia.current]) {
+            $("#timer").html("Time remaining: " + "00:" + trivia.count + " secs");
+            $("#question_div").html(trivia.questions[trivia.current].question);
+            var choicesArr = trivia.questions[trivia.current].choices;
             var buttonsArr = [];
 
             for (var i = 0; i < choicesArr.length; i++) {
@@ -61,50 +60,54 @@ $.fn.trivia = function() {
                 button.attr('data-id', i);
                 $('#choices_div').append(button);
             }
-            window.triviaCounter = setInterval(_t.timer, 1000);
+            window.triviaCounter = setInterval(trivia.timer, 1000);
         } else {
-            $('body').append($('<div />', {
+            $('#unanswered').append($('<div />', {
                 text: 'Unanswered: ' + (
-                    _t.questions.length - (_t.answers.correct + _t.answers.incorrect)),
+                    trivia.questions.length - (trivia.answers.correct + trivia.answers.incorrect)),
                 class: 'result'
             }));
             $('#start_button').text('Restart').appendTo('body').show();
         }
     };
-    _t.timer = function() {
-        _t.count--;
-        if (_t.count <= 0) {
+    trivia.timer = function() {
+        trivia.count--;
+        index = trivia.questions[trivia.current].correct,
+        correct = trivia.questions[trivia.current].choices[index];
+        if (trivia.count <= 0) {
+            $('#time_is_up').text("Time is up! The correct answer was: " + correct)
             setTimeout(function() {
-                _t.nextQ();
+                trivia.nextQ();
             });
 
         } else {
-            $("#timer").html("Time remaining: " + "00:" + _t.count + " secs");
+            $("#timer").html("Time remaining: " + "00:" +trivia.count + " secs");
         }
     };
-    _t.nextQ = function() {
-        _t.current++;
+    trivia.nextQ = function() {
+        trivia.current++;
         clearInterval(window.triviaCounter);
-        _t.count = 30;
+        trivia.count = 30;
         $('#timer').html("");
         setTimeout(function() {
-            _t.cleanUp();
-            _t.ask();
-        }, 1000)
+            trivia.cleanUp();
+            trivia.ask();
+        }, 5000)
     };
-    _t.cleanUp = function() {
+
+    trivia.cleanUp = function() {
         $('div[id]').each(function(item) {
             $(this).html('');
         });
-        $('.correct').html('Correct answers: ' + _t.answers.correct);
-        $('.incorrect').html('Incorrect answers: ' + _t.answers.incorrect);
+        $('.correct').html('Correct answers: ' + trivia.answers.correct);
+        $('.incorrect').html('Incorrect answers: ' + trivia.answers.incorrect);
     };
-    _t.answer = function(correct) {
+    trivia.answer = function(correct) {
         var string = correct ? 'correct' : 'incorrect';
-        _t.answers[string]++;
-        $('.' + string).html(string + ' answers: ' + _t.answers[string]);
+        trivia.answers[string]++;
+        $('.' + string).html(string + ' answers: ' + trivia.answers[string]);
     };
-    return _t;
+    return trivia;
 };
 var Trivia;
 
@@ -118,16 +121,16 @@ $("#start_button").click(function() {
 
 $('#choices_div').on('click', 'button', function(e) {
     var userPick = $(this).data("id"),
-        _t = Trivia || $(window).trivia(),
-        index = _t.questions[_t.current].correct,
-        correct = _t.questions[_t.current].choices[index];
+    trivia = Trivia || $(window).trivia(),
+        index = trivia.questions[trivia.current].correct,
+        correct = trivia.questions[trivia.current].choices[index];
 
     if (userPick !== index) {
         $('#choices_div').text("Wrong Answer! The correct answer was: " + correct);
-        _t.answer(false);
+        trivia.answer(false);
     } else {
         $('#choices_div').text("Correct!!! The correct answer was: " + correct);
-        _t.answer(true);
+        trivia.answer(true);
     }
-    _t.nextQ();
+    trivia.nextQ();
 });
