@@ -28,15 +28,11 @@
     font-size: 200%;
 }
 
-text {
-    font-family: 'Comfortaa', cursive;
-    font-size: 200%;
-}
-
 #start_button {
     display: block;
     margin: auto;
     padding: 1vh;
+    font-size: 100%;
 }
 
 #timer, #question_div {
@@ -63,6 +59,15 @@ text {
   }
 
 #choices_div button {
-    padding: 1vh;
+    padding: 15px;
     margin: 20px;
+    font-size: 75%;
+    font-family: 'Comfortaa', cursive;
+}
+
+#intro-image {
+    display: block;
+    margin: auto;
+    width: 300px;
+    padding-top: 50px;
 }

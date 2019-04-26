@@ -9,11 +9,11 @@ $.fn.trivia = function() {
     trivia.count = 30;
     trivia.current = 0;
     trivia.questions = [{
-        question: "What percent of the Roman population were plebians?",
+        question: "During most of the history of Rome, what percent of the Roman population were plebians?",
         choices: ["42%", "90%", "55%", "36%"],
         correct: 1
     }, {
-        question: "Gladiator fights were held where?",
+        question: "Where were gladiator fights held?",
         choices: ["The Podiam", "The Prosetheum", "The Colosseum", "The Parthanon"],
         correct: 2
 
@@ -33,8 +33,8 @@ $.fn.trivia = function() {
         correct: 0
 
     }, {
-        question: "Between 509 B.C. and 27 B.C. what type of government was Rome?",
-        choices: ["Oligarchy", "Democracy", "Republic", "Monarcy"],
+        question: "Between 509 B.C. and 27 B.C., what form of government did Rome have?",
+        choices: ["Oligarchy", "Democracy", "Republic", "Monarchy"],
         correct: 3
 
     }, {
@@ -49,7 +49,7 @@ $.fn.trivia = function() {
     }];
     trivia.ask = function() {
         if (trivia.questions[trivia.current]) {
-            $("#timer").html("Time remaining: " + "00:" + trivia.count + " secs");
+            $("#timer").html("Time: " + trivia.count + " sec");
             $("#question_div").html(trivia.questions[trivia.current].question);
             var choicesArr = trivia.questions[trivia.current].choices;
             var buttonsArr = [];
@@ -62,11 +62,11 @@ $.fn.trivia = function() {
             }
             window.triviaCounter = setInterval(trivia.timer, 1000);
         } else {
-            $('#unanswered').append($('<div />', {
-                text: 'Unanswered: ' + (
-                    trivia.questions.length - (trivia.answers.correct + trivia.answers.incorrect)),
-                class: 'result'
-            }));
+            // $('#unanswered').append($('<div />', {
+            //     text: 'Unanswered: ' + (
+            //         trivia.questions.length - (trivia.answers.correct + trivia.answers.incorrect)),
+            //     class: 'result'
+            // }));
             $('#start_button').text('Restart').appendTo('body').show();
         }
     };
@@ -79,9 +79,9 @@ $.fn.trivia = function() {
             setTimeout(function() {
                 trivia.nextQ();
             });
-
+            trivia.answer(false);
         } else {
-            $("#timer").html("Time remaining: " + "00:" +trivia.count + " secs");
+            $("#timer").html("Time: " + "00:" +trivia.count + " sec");
         }
     };
     trivia.nextQ = function() {
@@ -112,6 +112,7 @@ $.fn.trivia = function() {
 var Trivia;
 
 $("#start_button").click(function() {
+    $("#intro-image").css("display", "none");
     $(this).hide();
     $('.result').remove();
     $('div').html('');
