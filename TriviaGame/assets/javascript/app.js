@@ -9,7 +9,7 @@ $.fn.trivia = function() {
     trivia.count = 30;
     trivia.current = 0;
     trivia.questions = [{
-        question: "During most of the history of Rome, what percent of the Roman population were plebians?",
+        question: "Throughout most of Roman history, what percent of the population were plebians?",
         choices: ["42%", "90%", "55%", "36%"],
         correct: 1
     }, {
