@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <title>The Office Gifs</title>
+  <link rel="stylesheet" type="text/css" href="assets/css/reset.css">
+  <link rel="stylesheet" type="text/css" href="assets/css/style.css">
+  <style type="text/css">
+    button,
+    div,
+    form,
+    input {
+      margin: 10px;
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="container">
+    <h1>GIF time! The Office edition </h1>
+    <p>The Graphics Interchange Format (GIF /dʒɪf/ JIF or /ɡɪf/ GHIF), is a bitmap image format that was developed by a team at the online services provider CompuServe led by American computer scientist Steve Wilhite on June 15, 1987. It has since come into widespread usage on the World Wide Web due to its wide support and portability between many applications and operating systems.</p>
+    <!-- Rendered Buttons will get Dumped Here  -->
+    <div id="buttons-view"></div>
+
+    <form id="character-form">
+        <label for="character-input">Who are we missing?!</label>
+        <input type="text" id="character-input">
+        <br>
+  
+        <!-- Button triggers new movie to be added -->
+        <input id="add-character" type="submit" value="Add a character">
+      </form>
+
+    <!-- Character gifs will Get Dumped Here -->
+    <div id="characters-view"></div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script type="text/javascript">
+      // Initial array of movies
+      var characters = ["Michael Scott", "Pam Beesly", "Dwight Schrute", "Jim Halpert", "Andy Bernard", "Angela Martin", "Toby Flenderson", "Phyllis Vance", "Oscar Martinez", "Kevin Malone", "Kelly Kapoor", "Stanley Hudson", "Meredith Palmer", "Darryl Philbin", "Creed Bratton", "Jan Levinson", "Ryan Howard"];
+
+      // displayCharacterInfo function re-renders the HTML to display the appropriate content
+      function displayCharacterInfo() {
+
+        var character = $(this).attr("data-name");
+        var queryURL = "https://api.giphy.com/v1/gifs/search?q=" + character + "%20The%20Office&limit=10&apikey=lFxwxaJzQuplBBUqOoh7wII8hi3O5F3g";
+        
+        
+        // Creating an AJAX call for the specific character button being clicked
+        $.ajax({
+          url: queryURL,
+          method: "GET"
+        }).then(function(response) {
+            console.log(response);
+          // Creating a div to hold the character
+          var results = response.data;
+
+          // Looping over every result item
+          for (var i = 0; i < results.length; i++) {
+
+                // Only taking action if the photo has an appropriate rating
+                if (results[i].rating !== "r") {
+                // Creating a div for the gif
+                var gifDiv = $("<div>");
+
+                // Storing the result item's rating
+                var rating = results[i].rating;
+
+                // Creating a paragraph tag with the result item's rating
+                var p = $("<p>").text("Rating: " + rating);
+
+                // Creating an image tag
+                var personImage = $("<img>");
+
+                // Giving the image tag a src attribute of a proprty pulled off the
+                // result item
+                personImage.attr("src", results[i].images.fixed_height.url, "data-still", results[i].images.fixed_height.url, "data-animate", results[i].images.fixed_height.url, "data-state", "still");
+
+                var state = $(personImage).attr("data-state");
+                console.log(state);
+                // If the clicked image's state is still, update its src attribute to what its data-animate value is.
+                // Then, set the image's data-state to animate
+                // Else set src to the data-still value
+                if (state === "still") {
+                    $(personImage).attr("src", $(personImage).attr("data-animate"));
+                    $(personImage).attr("data-state", "animate");
+                } else {
+                    $(personImage).attr("src", $(personImage).attr("data-still"));
+                    $(personImage).attr("data-state", "still");
+                }
+                // Appending the paragraph and personImage we created to the "gifDiv" div we created
+                gifDiv.append(personImage);
+                gifDiv.append(p);
+
+                // Prepending the gifDiv to the "#gifs-appear-here" div in the HTML
+                $("#characters-view").prepend(gifDiv);
+                }
+            }
+        });
+
+      }
+
+    
+
+      // Function for displaying character data
+      function renderButtons() {
+
+        // Deleting the movies prior to adding new movies
+        // (this is necessary otherwise you will have repeat buttons)
+        $("#buttons-view").empty();
+
+        // Looping through the array of characters
+        for (var i = 0; i < characters.length; i++) {
+
+          // Then dynamicaly generating buttons for each character in the array
+          // This code $("<button>") is all jQuery needs to create the beginning and end tag. (<button></button>)
+          var a = $("<button>");
+          // Adding a class of character-btn to our button
+          a.addClass("character-btn");
+          // Adding a data-attribute
+          a.attr("data-name", characters[i]);
+          // Providing the initial button text
+          a.text(characters[i]);
+          // Adding the button to the buttons-view div
+          $("#buttons-view").append(a);
+        }
+      }
+
+      // This function handles events where the add character button is clicked
+      $("#add-character").on("click", function(event) {
+        event.preventDefault();
+        // This line grabs the input from the textbox
+        var character = $("#character-input").val().trim();
+
+        // Adding character from the textbox to our array
+        characters.push(character);
+        console.log(characters);
+        // Calling renderButtons which handles the processing of our movie array
+        renderButtons();
+      });
+
+      // Adding a click event listener to all elements with a class of "character-btn"
+      $(document).on("click", ".character-btn", displayCharacterInfo);
+
+      // Calling the renderButtons function to display the intial buttons
+      renderButtons();
+    </script>
+  </div>
+</body>
+
+</html>
