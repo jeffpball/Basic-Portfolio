@@ -59,3 +59,13 @@ label {
     text-transform: capitalize;   
   }
 
+#image-container {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-content: space-between;
+}
+
+.character-drawing {
+    max-height: 200px;
+}
