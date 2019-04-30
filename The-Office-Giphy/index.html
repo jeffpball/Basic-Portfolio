@@ -21,6 +21,7 @@
   <div class="container">
     <h1>GIF time! The Office edition </h1>
     <p>The Graphics Interchange Format (GIF /dʒɪf/ JIF or /ɡɪf/ GHIF), is a bitmap image format that was developed by a team at the online services provider CompuServe led by American computer scientist Steve Wilhite on June 15, 1987. It has since come into widespread usage on the World Wide Web due to its wide support and portability between many applications and operating systems.</p>
+    <p>This US adaptation, set at a paper company in Scranton, Pa., has a similar documentary style to that of the Ricky Gervais-led British original. It features the staff of Dunder-Mifflin, a staff that includes characters based on characters from the British show (and, quite possibly, people you work with in your office). There's Jim, the likable employee who's a bit of an everyman. Jim has a thing for receptionist-turned-sales rep Pam (because office romances are always a good idea). There's also Dwight, the successful co-worker who lacks social skills and common sense. And there's Ryan, who has held many jobs at the company.</p>
     <!-- Rendered Buttons will get Dumped Here  -->
     <div id="buttons-view"></div>
 
@@ -53,10 +54,9 @@
           url: queryURL,
           method: "GET"
         }).then(function(response) {
-            console.log(response);
           // Creating a div to hold the character
           var results = response.data;
-
+          console.log(response);
           // Looping over every result item
           for (var i = 0; i < results.length; i++) {
 
@@ -66,30 +66,34 @@
                 var gifDiv = $("<div>");
 
                 // Storing the result item's rating
-                var rating = results[i].rating;
-
+                var rating = (results[i].rating).toUpperCase();;
+                var title = results[i].title;
+                
                 // Creating a paragraph tag with the result item's rating
-                var p = $("<p>").text("Rating: " + rating);
-
+                var p = $("<p>").html("Title: " + title + "<br/>" + "<br/>" + "Rating: " + rating).addClass("capitalize");
+                
                 // Creating an image tag
                 var personImage = $("<img>");
 
                 // Giving the image tag a src attribute of a proprty pulled off the
                 // result item
-                personImage.attr("src", results[i].images.fixed_height.url, "data-still", results[i].images.fixed_height.url, "data-animate", results[i].images.fixed_height.url, "data-state", "still");
+                personImage.attr("src", results[i].images.fixed_height_still.url);
+                personImage.attr("data-still", results[i].images.fixed_height_still.url);
+                personImage.attr("data-animate", results[i].images.fixed_height.url);
+                personImage.attr("data-state", "still");
+                personImage.attr("class", "gif");
 
                 var state = $(personImage).attr("data-state");
-                console.log(state);
+                
+                // var state = $(personImage).attr("data-state");
+                // console.log(state);
+
                 // If the clicked image's state is still, update its src attribute to what its data-animate value is.
                 // Then, set the image's data-state to animate
                 // Else set src to the data-still value
-                if (state === "still") {
-                    $(personImage).attr("src", $(personImage).attr("data-animate"));
-                    $(personImage).attr("data-state", "animate");
-                } else {
-                    $(personImage).attr("src", $(personImage).attr("data-still"));
-                    $(personImage).attr("data-state", "still");
-                }
+
+                
+
                 // Appending the paragraph and personImage we created to the "gifDiv" div we created
                 gifDiv.append(personImage);
                 gifDiv.append(p);
@@ -98,12 +102,24 @@
                 $("#characters-view").prepend(gifDiv);
                 }
             }
+
+            $( ".gif" ).on("click", function() {
+                // The attr jQuery method allows us to get or set the value of any attribute on our HTML element
+                var state = $(this).attr("data-state");
+                // If the clicked image's state is still, update its src attribute to what its data-animate value is.
+                // Then, set the image's data-state to animate
+                // Else set src to the data-still value
+                if (state === "still") {
+                  $(this).attr("src", $(this).attr("data-animate"));
+                  $(this).attr("data-state", "animate");
+                } else {
+                  $(this).attr("src", $(this).attr("data-still"));
+                  $(this).attr("data-state", "still");
+                }
+            });
         });
-
       }
-
-    
-
+      
       // Function for displaying character data
       function renderButtons() {
 
@@ -128,6 +144,7 @@
         }
       }
 
+    
       // This function handles events where the add character button is clicked
       $("#add-character").on("click", function(event) {
         event.preventDefault();
@@ -136,7 +153,6 @@
 
         // Adding character from the textbox to our array
         characters.push(character);
-        console.log(characters);
         // Calling renderButtons which handles the processing of our movie array
         renderButtons();
       });
