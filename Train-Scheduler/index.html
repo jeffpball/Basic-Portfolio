@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+
+<html lang="en-us">
+
+<head>
+
+  <meta charset="UTF-8">
+  <title>Train Scheduler</title>
+
+  <!-- Bootstrap -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+
+   <!-- jQuery -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+  <!-- Firebase -->
+  <script src="https://www.gstatic.com/firebasejs/6.0.0/firebase.js"></script>
+
+   <!-- Moment JS -->
+   <script src="https://cdn.jsdelivr.net/momentjs/2.12.0/moment.min.js"></script>
+</head>
+
+<body>
+
+  <div class="container">
+
+    <br>
+
+    <!-- Jumbotron -->
+    <div class="jumbotron">
+      <h1 class="text-center">Train Schedule</h1>
+    </div>
+
+    <div class="row">
+        <div class="col-lg-12">
+            <div class="card card-default">
+            <div class="card-header">Current Train Schedule</div>
+            <table class="table">
+                    <thead id="train-schedule-display">
+                        <tr>
+                            <th scope="col">Train Name</th>
+                            <th scope="col">Destination</th>
+                            <th scope="col">Frequency (min)</th>
+                            <th scope="col">Next Arrival</th>
+                            <th scope="col">Minutes Away</th>
+                        </tr>
+                    </thead>
+                </table>
+            </div>
+        </div>
+    </div>
+
+    <br>
+
+    <div class="row">
+
+      <!-- Add Train Card-->
+      <div class="col-lg-12">
+        <div class="card card-default">
+          <div class="card-header">
+            Add Train
+          </div>
+          <div class="card-body">
+
+            <!-- Sign-up Form (note the various input "types")-->
+
+            <form role="form">
+              <div class="form-group row">
+                <label for="name-input">Train Name:</label>
+                <input class="form-control" id="name-input" type="text">
+              </div>
+              <div class="form-group row">
+                <label for="email-input">Destination:</label>
+                <input class="form-control" id="destination-input" type="text">
+              </div>
+              <div class="form-group row">
+                <label for="age-input">First Train Time (HH:mm - military time):</label>
+                <input class="form-control" id="time-input" type="number">
+              </div>
+              <div class="form-group row">
+                <label for="age-input">Frequency (min):</label>
+                <input class="form-control" id="frequency-input" type="number">
+              </div>
+              
+              <button class="btn btn-primary" id="add-train" type="submit">Submit</button>
+            </form>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  
+  </div>
+
+  <!-- Script -->
+  <script>
+    
+    // Web App Firebase Configuration
+    var firebaseConfig = {
+        apiKey: "AIzaSyC7ttfZVf_-6pOqAbBq_vlncddQ8ocnOVE",
+        authDomain: "train-schedule-18f3c.firebaseapp.com",
+        databaseURL: "https://train-schedule-18f3c.firebaseio.com",
+        projectId: "train-schedule-18f3c",
+        storageBucket: "train-schedule-18f3c.appspot.com",
+        messagingSenderId: "215214072859",
+        appId: "1:215214072859:web:e77361f521a3c1f9"
+    };
+
+    // Initialize Firebase
+    firebase.initializeApp(firebaseConfig);
+
+    // Create a variable to reference the database.
+    var dataRef = firebase.database();
+
+    // Initial Values
+    var name = "";
+    var destination= "";
+    var firstTime = 0;
+    var frequency = 0;
+
+    // Capture Button Click
+    $("#add-train").on("click", function(event) {
+      event.preventDefault();
+
+      // Grabbed values from text boxes
+      name = $("#name-input").val().trim();
+      destination = $("#destination-input").val().trim();
+      firstTime = $("#time-input").val().trim();
+      frequency = $("#frequency-input").val().trim();
+
+      // Code for calculating minutesAway
+      var firstTimeConverted = moment(firstTime, "HH:mm").subtract(1, "years");
+
+      var currentTime = moment();
+      console.log("CURRENT TIME: " + moment(currentTime).format("hh:mm"));
+      var diffTime = moment().diff(moment(firstTimeConverted), "minutes");
+      console.log(diffTime);
+      var remainder = diffTime % frequency;
+      console.log(remainder);
+      var minutesTillTrain = frequency - remainder;
+      console.log(minutesTillTrain);
+      var nextTrain = moment().add(minutesTillTrain).format("hh:mm a");
+
+      // Code for handling the push
+      dataRef.ref().push({
+        name: name,
+        destination: destination,
+        frequency: frequency,
+        nextArrival: nextTrain,
+        minutesAway: minutesTillTrain,
+      });
+
+      // Empty out form
+      $("#name-input").val("");
+      $("#destination-input").val("");
+      $("#time-input").val("");
+      $("#frequency-input").val("");
+    });
+
+    // Firebase watcher .on("child_added"
+    dataRef.ref().on("child_added", function (childSnapshot) {
+            var sv = childSnapshot.val();
+
+            // full list of items to the well
+            $("#train-schedule-display").append (
+            "<tr>" + 
+            "<td>" + childSnapshot.val().name + "</td>" +
+            " <td>" + childSnapshot.val().destination + " </td>" + 
+            "<td>" + childSnapshot.val().frequency + " </td>" + 
+            "<td>" + childSnapshot.val().nextArrival + " </td>" + 
+            "<td>" + childSnapshot.val().minutesAway + " </td></tr>" );
+
+            // Handle the errors
+        }, function (errorObject) {
+            console.log("Errors handled: " + errorObject.code);
+        });
+
+  </script>
+
+</body>
+
+</html>

@@ -24,7 +24,7 @@
     <p>The Graphics Interchange Format (GIF /dʒɪf/ JIF or /ɡɪf/ GHIF), is a bitmap image format that was developed by a team at the online services provider CompuServe led by American computer scientist Steve Wilhite on June 15, 1987. It has since come into widespread usage on the World Wide Web due to its wide support and portability between many applications and operating systems.</p>
     <p>This US adaptation, set at a paper company in Scranton, Pa., has a similar documentary style to that of the Ricky Gervais-led British original. It features the staff of Dunder-Mifflin, a staff that includes characters based on characters from the British show (and, quite possibly, people you work with in your office). There's Jim, the likable employee who's a bit of an everyman. Jim has a thing for receptionist-turned-sales rep Pam (because office romances are always a good idea). There's also Dwight, the successful co-worker who lacks social skills and common sense. And there's Ryan, who has held many jobs at the company.</p>
     <!-- Rendered Buttons will get Dumped Here  -->
-    <div id="image-container1">
+    <div id="image-container">
       <img src="assets/images/Michael.jpg" alt="Michael" class="character-drawing">
       <img src="assets/images/Dwight.jpg" alt="" class="character-drawing">
       <img src="assets/images/Pam.jpg" alt="" class="character-drawing">
@@ -67,7 +67,6 @@
 
         var character = $(this).attr("data-name");
         var queryURL = "https://api.giphy.com/v1/gifs/search?q=" + character + "%20The%20Office&limit=10&apikey=lFxwxaJzQuplBBUqOoh7wII8hi3O5F3g";
-        var queryURL2 = "https://api.themoviedb.org/3/tv/550?api_key=a2662e17d8a9b9d15d6cfb54eba98de1"
         
         // Creating an AJAX call for the specific character button being clicked
         $.ajax({
@@ -86,7 +85,7 @@
                 var gifDiv = $("<div>");
 
                 // Storing the result item's rating
-                var rating = (results[i].rating).toUpperCase();;
+                var rating = (results[i].rating).toUpperCase();
                 var title = results[i].title;
                 
                 // Creating a paragraph tag with the result item's rating

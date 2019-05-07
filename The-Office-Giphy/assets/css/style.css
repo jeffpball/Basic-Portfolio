@@ -69,3 +69,7 @@ label {
 .character-drawing {
     max-height: 200px;
 }
+
+@media only screen and (max-width: 500px) {
+    
+  }
