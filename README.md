@@ -10,7 +10,7 @@
 
 4. GIPHY The Office [(repository)](https://github.com/jeffpball/jeffpball.github.io/tree/master/The-Office-Giphy) [(play)](https://jeffpball.github.io/The-Office-Giphy/index.html) 
 
-5. Train Scheduler [(repository)](https://github.com/jeffpball/jeffpball.github.io/tree/master/Train-Scheduler) [(play)](https://jeffpball.github.io/Train-Scheduler/index.html) 
+5. Train Scheduler [(repository)](https://github.com/jeffpball/jeffpball.github.io/tree/master/Train-Scheduler) [(try it out)](https://jeffpball.github.io/Train-Scheduler/index.html) 
 
-6. U Choose News [(repository)](https://github.com/jeffpball/jeffpball.github.io/tree/master/Train-Scheduler) [(play)](https://jeffpball.github.io/Train-Scheduler/index.html) 
+6. UChoose News [(repository)](https://github.com/jeffpball/jeffpball.github.io/tree/master/UChoose-News) [(try it out)](https://jeffpball.github.io/UChoose-News/index.html) 
 
