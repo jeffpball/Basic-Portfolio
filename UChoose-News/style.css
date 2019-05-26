@@ -1,0 +1,6 @@
+
+@media (max-width: 450px) {
+    .column {
+        min-width: 100%;
+    }
+}
