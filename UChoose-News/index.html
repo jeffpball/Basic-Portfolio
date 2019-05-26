@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <!-- Link to JQuery API -->
+    <script src="https://code.jquery.com/jquery-3.4.1.js" integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU=" crossorigin="anonymous"></script>
+    <!-- Link to JS file -->
+    <script src="app.js" type="text/javascript"></script>
+    <!-- The core Firebase JS SDK is always required and must be listed first -->
+    <script src="https://www.gstatic.com/firebasejs/6.0.2/firebase.js"></script>
+    <title> News you Choose </title>
+</head>
+
+</body>
+
+
+    <!-- navbar with ust an image -->
+   <nav class="navbar navbar-light bg-light">
+      <a class="navbar-brand" href="#">
+        <img src="images/u-choose-news3.png" width="150" alt="">
+      </a>
+   </nav>
+   
+   <div class="my-5 container">
+       <div class="card">
+   
+           <h5 class="card-header"> News Feed</h5>
+   
+           <div class="card-body row">
+   
+               <div class="col-4">
+   
+                   <div class="list-group mb-3" id="topics">
+                       <a href="" class="list-group-item active disabled" aria-disabled="true">Choose Topics:</a>
+                       <a id="Politics" class="list-group-item list-group-item-action topic" >Politics</a>
+                       <a id="Economy" class="list-group-item list-group-item-action topic">Economy</a>
+                       <a id="Technology" class="list-group-item list-group-item-action topic">Technology</a>
+                       <a id="Education" class="list-group-item list-group-item-action topic">Education</a>
+                       <a id="Style" class="list-group-item list-group-item-action topic">Style</a>
+                       <a id="Travel" class="list-group-item list-group-item-action topic">Travel</a>
+                       <a id="Sports" class="list-group-item list-group-item-action topic">Sports</a>
+                       <a id="Opinion" class="list-group-item list-group-item-action topic">Opinion</a>
+                       <a id="Film" class="list-group-item list-group-item-action topic">Film</a>
+                       <a id="World News" class="list-group-item list-group-item-action topic">World News</a>
+                   </div>
+                   
+                   <div class="input-group my-5">
+   
+                       <div class="input-group-prepend">
+                           <button style="box-shadow: none" class="btn btn-outline-secondary" type="button" id="custom-topic">Add Custom Topic</button>
+                       </div>
+   
+                       <input type="text" class="form-control" placeholder="" aria-label="Example text with button addon" aria-describedby="button-addon1" id="custom-topic-input">
+   
+                   </div>
+   
+                   <!-- <div class="list-group mt-5 mb-5" id="filters">
+                    <a href="" class="list-group-item active disabled" aria-disabled="true">Choose Tone:</a>
+                    <a id="Positive-Filter" class="list-group-item list-group-item-action positive" >Positive</a>
+                    <a id="Neutral-Filter" class="list-group-item list-group-item-action neutral">Neutral</a>
+                    <a id="Negative-Filter" class="list-group-item list-group-item-action negative">Negative</a>
+                    </div> -->
+
+                   <div class="list-group" id="filters">
+                       <a href="" class="list-group-item active disabled" aria-disabled="true">Apply Filters:</a>
+                       <a id="War" class="list-group-item list-group-item-action filter" >War</a>
+                       <a id="Terrorism" class="list-group-item list-group-item-action filter">Terrorism</a>
+                       <a id="Shootings" class="list-group-item list-group-item-action filter">Shootings</a>
+                       <a id="Politics" class="list-group-item list-group-item-action filter">Politics</a>
+                       <a id="Donald-Trump" class="list-group-item list-group-item-action filter">Donald Trump</a>
+                       <a id="Kanye" class="list-group-item list-group-item-action filter">Kanye</a>
+                       <a id="Movie-Spoilers" class="list-group-item list-group-item-action filter">Movie Spoliers</a>
+                       <a id="Sports-Spoilers" class="list-group-item list-group-item-action filter">Sports Spoilers</a>
+                       <a id="Natural-Disasters" class="list-group-item list-group-item-action filter">Natural Disasters</a>
+                       <a id="Threat-of-Nuclear-War" class="list-group-item list-group-item-action filter">Threat of Nuclear War</a>
+                   </div>
+   
+                   <div class="input-group my-5">
+   
+                       <div class="input-group-prepend">
+                           <button style="box-shadow: none" class="btn btn-outline-secondary" type="button" id="custom-filter">Add Custom Filter</button>
+                       </div>
+   
+                       <input type="text" class="form-control" placeholder="" aria-label="Example text with button addon" aria-describedby="button-addon1" id="custom-filter-input">
+   
+                   </div>
+   
+                   <a id="reset-all-buttons" style="color:white" class="btn btn-secondary mb-2">Reset All Buttons</a>
+   
+                   <a id="clear-newsfeed-button" style="color:white" class="btn btn-secondary mb-2">Clear News Feed</a>
+   
+                   <a id="filtered-news-button" style="color:white" class="btn btn-primary">Push News Feed</a>
+                   
+                   <!-- Input button for username -->
+                   <div class="input-group my-5">
+   
+                    <div class="input-group">
+                        <div class="input-group-prepend">
+                            <button class="btn btn-outline-secondary" id="save-my-settings" type="button">Save Settings</button>
+                        </div>
+                        <input type="text" id="username" class="form-control" placeholder="your username" aria-label="" aria-describedby="basic-addon1">
+                    </div>
+
+                </div>
+   
+               </div>
+   
+               <div class="col-8">
+                 <div id="MainDisplay"></div>
+               </div>
+   
+           </div>
+   
+       </div>
+   
+   </div>
+   
+   </body>
+</html>
+
