@@ -252,7 +252,7 @@ $(document).ready(function()  {
     
     // Filter Array
     // Changes button color to red on click, and back to gray on additional click.
-    $(document).on('click', '.filter', function(){
+    $(document).on('click touch', '.filter', function(){
         // Toggles between having the following class and not having it. Class causes buttons to be colored red.
         $(this).toggleClass("list-group-item-danger");
         // The following code pushes as well as removes the id of each button from an array
@@ -303,13 +303,13 @@ $(document).ready(function()  {
     
     // On click of submit button have the news articles displayed
     
-    $("#filtered-news-button").on('click', displayingArticles); 
+    $("#filtered-news-button").on('click touch', displayingArticles); 
     
     // For testing raw Array to Final 
     // $("#filtered-news-button").on('click', rawArrayToFinal); 
     
     // Save my settings button stores the users name once its clicked
-    $("#save-my-settings").on("click", function() {
+    $("#save-my-settings").on('click touch', function() {
         //
         var username = $('#username').val().trim()
         
