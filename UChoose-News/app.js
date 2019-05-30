@@ -303,13 +303,13 @@ $(document).ready(function()  {
     
     // On click of submit button have the news articles displayed
     
-    $("#filtered-news-button").on('vclick', displayingArticles); 
+    $("#filtered-news-button").on('click', displayingArticles); 
     
     // For testing raw Array to Final 
     // $("#filtered-news-button").on('click', rawArrayToFinal); 
     
     // Save my settings button stores the users name once its clicked
-    $("#save-my-settings").on('vclick', function() {
+    $("#save-my-settings").on('click', function() {
         //
         var username = $('#username').val().trim()
         
