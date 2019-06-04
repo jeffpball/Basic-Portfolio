@@ -53,6 +53,7 @@ function concert() {
         if (err) {
           return console.log(err);
         }
+        console.log("--log.txt was updated--");
       });
 
     })
@@ -102,7 +103,7 @@ function movie() {
           return console.log(err);
         }
         // Otherwise, it will print: "movies.txt was updated!"
-        console.log("updated");
+        console.log("--log.txt was updated--");
       });
     })
     .catch(function(error) {
@@ -164,7 +165,7 @@ function spotify() {
         }
      
         // Otherwise, it will print: "movies.txt was updated!"
-        console.log("");
+        console.log("--log.txt was updated--");
       });
   });
   
@@ -185,7 +186,6 @@ function other() {
 
   // We will then print the contents of data
   console.log(data);
-
   // Then split it by commas (to make it more readable)
   var dataArr = data.split(",");
 
