@@ -14,3 +14,5 @@
 
 6. UChoose News [(repository)](https://github.com/jeffpball/jeffpball.github.io/tree/master/UChoose-News) [(try it out)](https://jeffpball.github.io/UChoose-News/index.html) 
 
+7. Liri Node App [(repository)](https://github.com/jeffpball/jeffpball.github.io/tree/master/liri-node-app) [(check it out)](https://jeffpball.github.io/liri-node-app/NodeHomework.mov) 
+
