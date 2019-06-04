@@ -53,9 +53,6 @@ function concert() {
         if (err) {
           return console.log(err);
         }
-     
-        // Otherwise, it will print: "movies.txt was updated!"
-        console.log("");
       });
 
     })
@@ -72,10 +69,10 @@ function concert() {
       } else if (error.request) {
         // The request was made but no response was received
         // `error.request` is an object that comes back with details pertaining to the error that occurred.
-        console.log(error.request);
-      } else {
+        console.log("Error Request: " + error.request);
+      } else if (error.message) {
         // Something happened in setting up the request that triggered an Error
-        console.log("Error", error.message);
+        console.log("Sorry this artist has no upcoming events.");
       }
       console.log(error.config);
     });
