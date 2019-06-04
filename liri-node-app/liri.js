@@ -37,15 +37,15 @@ function concert() {
         (
           response.data[0].venue.name + "\n" + response.data[0].venue.city + " " + response.data[0].venue.region + "\n" + moment(response.data[0].datetime.substring(0,10), 'YYYY MM DD').format('MM/DD/YY')
           + "\n" + "-------------------------------------" + "\n" +
-          response.data[1].venue.name + "\n" + response.data[1].venue.city + " " + response.data[1].venue.region + "\n" + moment(response.data[0].datetime.substring(0,10), 'YYYY MM DD').format('MM/DD/YY')
+          response.data[1].venue.name + "\n" + response.data[1].venue.city + " " + response.data[1].venue.region + "\n" + moment(response.data[1].datetime.substring(0,10), 'YYYY MM DD').format('MM/DD/YY')
           + "\n" + "-------------------------------------" + "\n" +
-          response.data[2].venue.name + "\n" + response.data[2].venue.city + " " + response.data[2].venue.region + "\n" + moment(response.data[0].datetime.substring(0,10), 'YYYY MM DD').format('MM/DD/YY')
+          response.data[2].venue.name + "\n" + response.data[2].venue.city + " " + response.data[2].venue.region + "\n" + moment(response.data[2].datetime.substring(0,10), 'YYYY MM DD').format('MM/DD/YY')
           + "\n" + "-------------------------------------" + "\n" +
-          response.data[3].venue.name + "\n" + response.data[3].venue.city + " " + response.data[3].venue.region + "\n" + moment(response.data[0].datetime.substring(0,10), 'YYYY MM DD').format('MM/DD/YY')
+          response.data[3].venue.name + "\n" + response.data[3].venue.city + " " + response.data[3].venue.region + "\n" + moment(response.data[3].datetime.substring(0,10), 'YYYY MM DD').format('MM/DD/YY')
           + "\n" + "-------------------------------------" 
           );
 
-      console.log("THIS WORKED: " + "\n" + concertResponse);
+      console.log("\n" + concertResponse);
 
       fs.appendFile("log.txt", concertResponse, function(err) {
 
