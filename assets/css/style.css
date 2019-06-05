@@ -116,7 +116,7 @@ footer {
 #section3 {
     background: #ffffff;
     box-shadow: 0 .5px 1px 0 rgba(0, 0, 0, 0.2), 0 .75px 2.5px 0 rgba(0, 0, 0, 0.19);
-    height: 560px;
+    height: 750px;
     margin-top: 60px;
     margin-bottom: 400px;
 }
@@ -199,6 +199,18 @@ figcaption {
     position: relative;
     top: -575px;
     left: 670px;
+}   
+
+#project6 {
+    position: relative;
+    top: -575px;
+    left: 670px;
+}   
+
+#project7 {
+    position: relative;
+    top: -525px;
+    left: 42px;
 }   
 
 /* contact.html styles */
