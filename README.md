@@ -16,5 +16,5 @@
 
 7. Liri Node App [(repository)](https://github.com/jeffpball/jeffpball.github.io/tree/master/liri-node-app) [(download short video)](https://jeffpball.github.io/liri-node-app/NodeHomework.mov) 
 
-7. Bamazon [(repository)](https://github.com/jeffpball/jeffpball.github.io/tree/master/Bamazon) [(download short video)](https://jeffpball.github.io/liri-node-app/BamazonVideo.webm) 
+7. Bamazon [(repository)](https://github.com/jeffpball/jeffpball.github.io/tree/master/Bamazon) [(watch short video)](https://jeffpball.github.io/liri-node-app/BamazonVideo.webm) 
 
