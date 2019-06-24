@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>FriendFinder</title>
+      
+        <!-- Latest compiled and minified CSS & JS -->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+        <script src="https://code.jquery.com/jquery.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+      
+        <!-- Font Awesome Glyphicons -->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.1/css/font-awesome.min.css">
+      
+        <!-- Chosen -->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/chosen/1.5.1/chosen.css">
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/chosen/1.5.1/chosen.jquery.min.js"></script>
+      
+      </head>
+<body>
+    
+    <h1 class="text-center"> Survey Questions </h1>
+    <form>
+        <div class="form-group">
+            <label for="name">Name</label>
+            <input type="name" class="form-control" id="name" placeholder="Name">
+        </div>
+        <div class="form-group">
+            <label for="photo-link"> Link to photo </label>
+            <input type="link" class="form-control" id="photo" placeholder="http://my-photo.url">
+        </div>
+        <div class="form-group">
+            <label for="question1"> Q1. Do you like bowling? </label>
+            <select class="form-control" id="q1">
+                <option>1</option>
+                <option>2</option>
+                <option>3</option>
+                <option>4</option>
+                <option>5</option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label for="question2"> Q2. Are you a morning person? </label>
+            <select class="form-control" id="q2">
+                <option>1</option>
+                <option>2</option>
+                <option>3</option>
+                <option>4</option>
+                <option>5</option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label for="question3"> Q3. Would you ever run a 5k the day after Thanksgiving? </label>
+            <select class="form-control" id="q3">
+                <option>1</option>
+                <option>2</option>
+                <option>3</option>
+                <option>4</option>
+                <option>5</option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label for="question4"> Q4. Do you open presents Christmas morning or Christmas eve? </label>
+            <select class="form-control" id="q4">
+                <option>1</option>
+                <option>2</option>
+                <option>3</option>
+                <option>4</option>
+                <option>5</option>
+            </select>
+        </div>
+        
+        <button type="submit" class="btn btn-primary btn-lg btn-block" id="submit"><i class="fa fa-check-circle" aria-hidden="true"></i>Submit</button>
+
+    </form>
+
+    <p><a href="/api/friends">API Friends List</a> | <a href="https://github.com/afhaque/friendfinder">GitHub Repo</a></p>
+
+    <div id="results-modal" class="modal fade" role="dialog">
+        <div class="modal-dialog">
+    
+          <!-- Modal content-->
+          <div class="modal-content">
+            <div class="modal-header">
+              <button type="button" class="close" data-dismiss="modal">×</button>
+              <h2 class="modal-title"><strong>Best Match</strong></h2>
+            </div>
+            <div class="modal-body">
+              <h2 id="match-name"></h2>
+              <img id="match-img" src="" alt="">
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+            </div>
+          </div>
+    
+        </div>
+      </div>
+
+<!-- BELOW CODE IS CRITICAL. IT HANDLES HOW FORM DATA IS SENT TO OUR SERVER -->
+<script type="text/javascript">
+    // In this code below we create the Front-end JavaScript which "POSTS" our form data to our express server.
+    // In essence, when the user hits submit, jQuery grabs all of the fields then sends a post request to our api
+    // Our api recognizes the route (/api/tables)... and then runs the associated code (found in api-routes.js).
+    // In this case the associated code "saves" the data to the table-data.js file or waitinglist-data.js file
+  
+    // Capture the form inputs
+    $("#submit").on("click", function(event) {
+      event.preventDefault();
+  
+
+    // Form validation
+    function validateForm() {
+        var isValid = true;
+        $(".form-control").each(function() {
+            if ($(this).val() === "") {
+                isValid = false;
+            }
+        });
+   
+        $(".chosen-select").each(function() {
+
+            if ($(this).val() === "") {
+                isValid = false;
+            }
+        });
+        return isValid;
+        }
+
+        // If all required fields are filled
+        if (validateForm()) {
+            // Create an object for the user's data
+            var userData = {
+                name: $("#name").val(),
+                photo: $("#photo").val(),
+                scores: [
+                    $("#q1").val(),
+                    $("#q2").val(),
+                    $("#q3").val(),
+                    $("#q4").val(),
+                    // $("#q5").val(),
+                    // $("#q6").val(),
+                    // $("#q7").val(),
+                    // $("#q8").val(),
+                    // $("#q9").val(),
+                    // $("#q10").val(),
+                ]
+            };
+
+            // AJAX post the data to the friends API.
+            $.post("/api/friends", userData, function(data) {
+
+            });
+
+        } else {
+            alert("Please fill out all fields before submitting!")
+        }
+
+        $.ajax({ url: "/api/friends", method: "GET" })
+        .then(function(userData) {
+
+                // Grab the result from the AJAX post so that the best match's name and photo are displayed.
+                $("#match-name").text(friendsAPI[finalmatch].name);
+                $("#match-img").attr("src", friendsAPI[finalmatch].photo);
+
+                // Show the modal with the best match
+                $("#results-modal").modal("toggle");
+      });
+
+    });
+
+  </script>
+  
+</body>
+</html>
+
