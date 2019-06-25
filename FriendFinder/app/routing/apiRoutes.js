@@ -21,7 +21,7 @@ module.exports = function(app) {
     
     app.post("/api/friends", function(req, res) { 
         // this pushes user survey data to freindsAPI
-        friendsAPI.push(req.body);
+        
         
         
         
@@ -57,7 +57,11 @@ module.exports = function(app) {
 
             // final match 
             let finalMatch = friendsAPI[matchIndex +1];
+
+            friendsAPI.push(req.body);
+            
             res.json(finalMatch);
+
             console.log(finalMatch)
 
             
