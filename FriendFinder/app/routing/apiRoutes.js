@@ -20,14 +20,8 @@ module.exports = function(app) {
     
     
     app.post("/api/friends", function(req, res) { 
-        // this pushes user survey data to freindsData 
+        // this pushes user survey data to freindsAPI
         friendsAPI.push(req.body);
-        
-        // console.log(req.body)
-        
-        // First user 
-        //console.log(friendsAPI[0]);
-        //console.log(friendsAPI)
         
         
         
@@ -63,7 +57,7 @@ module.exports = function(app) {
 
             // final match 
             let finalMatch = friendsAPI[matchIndex +1];
-
+            res.json(finalMatch);
             console.log(finalMatch)
 
             
