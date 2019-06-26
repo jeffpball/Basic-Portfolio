@@ -18,6 +18,6 @@
 
 8. Bamazon [(repository)](https://github.com/jeffpball/jeffpball.github.io/tree/master/Bamazon) [(watch short video)](https://jeffpball.github.io/Bamazon/BamazonVideo.webm) 
 
-9. FriendFinder [(repository)](https://github.com/jeffpball/jeffpball.github.io/tree/master/FriendFinder) [(try it out)](https://friend-finder-jpb.herokuapp.com/) 
+9. FriendFinder [(repository)](https://github.com/jeffpball/FriendFinder) [(try it out)](https://friend-finder-jpb.herokuapp.com/) 
 
 
