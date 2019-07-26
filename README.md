@@ -12,7 +12,7 @@
 
 5. Train Scheduler [(repository)](https://github.com/jeffpball/jeffpball.github.io/tree/master/Train-Scheduler) [(try it out)](https://jeffpball.github.io/Train-Scheduler/index.html) 
 
-6. UChoose News [(repository)](https://github.com/jeffpball/jeffpball.github.io/tree/master/UChoose-News) [(try it out)](https://jeffpball.github.io/UChoose-News/index.html) 
+6. Project 1 - UChoose News [(repository)](https://github.com/jeffpball/jeffpball.github.io/tree/master/UChoose-News) [(try it out)](https://jeffpball.github.io/UChoose-News/index.html) 
 
 7. Liri Node App [(repository)](https://github.com/jeffpball/jeffpball.github.io/tree/master/liri-node-app) [(download short video)](https://jeffpball.github.io/liri-node-app/NodeHomework.mov) 
 
