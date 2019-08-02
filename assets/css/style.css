@@ -231,6 +231,12 @@ figcaption {
     left: 359px;
 }  
 
+#project12 {
+    position: relative;
+    top: -1126px;
+    left: 670px;
+}  
+
 /* contact.html styles */
 
 /* Style inputs with type="text", select elements and textareas */
@@ -550,6 +556,40 @@ input[type=submit]:hover {
     }   
     
     #project6 {
+        position: relative;
+        top: 280px;
+        left: 25px;
+    }  
+
+    #project7 {
+        position: relative;
+        top: 280px;
+        left: 25px;
+    }  
+
+    #project8 {
+        position: relative;
+        top: 280px;
+        left: 25px;
+    }  
+
+    #project9 {
+        position: relative;
+        top: 280px;
+        left: 25px;
+    }  
+
+    #project10 {
+        position: relative;
+        top: 280px;
+        left: 25px;
+    }  
+    #project11 {
+        position: relative;
+        top: 280px;
+        left: 25px;
+    }  
+    #project12 {
         position: relative;
         top: 280px;
         left: 25px;
