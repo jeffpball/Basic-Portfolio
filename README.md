@@ -26,7 +26,7 @@
 
 12. Web Scraper [(repository)](https://github.com/jeffpball/mongoose-cheerio) [(try it out)](https://mongoose-cheerio-jpb.herokuapp.com/articles) 
 
-13. React Memory Game [(repository)](https://github.com/jeffpball/react-memory-game) [(try it out)](https://react-memory-game-jpb.herokuapp.com/) 
+13. React Memory Game [(repository)](https://github.com/jeffpball/react-memory-game) [(try it out)](https://jeffpball.github.io/react-memory-game/) 
 
 
 
