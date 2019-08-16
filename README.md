@@ -29,7 +29,7 @@
 13. React Memory Game [(repository)](https://github.com/jeffpball/react-memory-game) [(try it out)](https://jeffpball.github.io/react-memory-game/) 
 
 
-13. Google Books React App [(repository)](https://github.com/jeffpball/google-books-react-app) [(try it out)](https://google-books-react-app-jpb.herokuapp.com/) 
+14. Google Books React App [(repository)](https://github.com/jeffpball/google-books-react-app) [(try it out)](https://google-books-react-app-jpb.herokuapp.com/) 
 
 
 
