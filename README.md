@@ -31,6 +31,8 @@
 
 14. Google Books React App [(repository)](https://github.com/jeffpball/google-books-react-app) [(try it out)](https://google-books-react-app-jpb.herokuapp.com/) 
 
+15. Project 3 [(repository)](https://github.com/jeffpball/project_3) [(try it out)](https://edgeticket.herokuapp.com/) 
+
 
 
 
